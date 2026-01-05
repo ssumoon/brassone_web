@@ -47,6 +47,11 @@ hr {
   padding: 0;
 }
 
+
+a {
+  text-decoration: none;
+}
+
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
@@ -446,8 +451,10 @@ body * {
 }
 header {
   position: fixed;
+  height:86px;
+  box-sizing: border-box;
   top:0;
-  height:90px;
+  padding-top:20px;
   left:0;
   right:0;
   z-index: 3;
@@ -456,7 +463,9 @@ header {
   border-bottom:1px rgba(255,255,255,0.1) solid;
   .logo-wrap {
     position: relative;
-    display: block;
+    height:50px;
+    display: flex;
+    align-items: center;
     line-height:0;
     .color {
       width:140px;
@@ -473,17 +482,25 @@ header {
     align-items: center;
     max-width:100%;
     padding:0 80px;
-    height:100%;
   }
   .gnb {
+    margin:0;
     display: flex;
     align-items: center;
     list-style-type: none;
-    gap:40px;
     flex:1;
     justify-content: center;
-    li a {
+    li {
+      display: flex;
+      flex-direction: column;
+    }
+    .main-item {
       font-family: 'Pretendard';
+      display: flex;
+      height:50px;
+      align-items: center;
+      justify-content: center;
+      width:120px;
       font-size:16px;
       color:#fff;
       font-weight:700;
@@ -495,11 +512,18 @@ header {
         transition-duration: .3s;
       }
     }
+    .sub-item {
+      display: none;
+      margin-top:10px;
+      margin-bottom:30px;
+      transition-duration: .3s;
+    }
   }
   .tools {
     display: flex;
     align-items: center;
     gap:20px;
+    height:50px;
     .lang {
       a {
         color:rgba(255,255,255,0.5);
@@ -538,6 +562,7 @@ header {
         background: #111;
         position: relative;
         z-index: 3;
+        transition-duration: .3s;
       }
       .effect {
         transform-origin: center;
@@ -545,7 +570,7 @@ header {
         width:48px;
         height:48px;
         transform: scale(0);
-        background: #fff;
+        background: #111;
         border-radius: 50%;
         position: absolute;
         z-index: 2;
@@ -559,6 +584,10 @@ header {
       &:hover,
       &:focus,
       &:focus-within {
+        > span {
+          background: #fff;
+          transition-duration: .3s;
+        }
         .effect {
           transform: scale(1);
           transition-duration: .3s;
@@ -569,6 +598,7 @@ header {
   }
   &.fixed {
     height:70px;
+    padding-top:10px;
     background: #fafafa;
     transition-duration: .3s;
     border-bottom:1px rgba(0,0,0,0.1) solid;
@@ -599,6 +629,69 @@ header {
       a+a {
         border-left:1px rgba(0,0,0,0.2) solid;
       }
+    }
+    &:hover,
+    &:focus,
+    &:focus-within {
+      height:310px;
+      transition-duration: .3s;
+    }
+  }
+}
+header:hover,
+header:focus,
+header:focus-within {
+  background: #fff;
+  height:330px;
+  transition-duration: .3s;
+  .container {
+    align-items: flex-start;
+    transition-duration: .3s;
+  }
+  .logo-wrap {
+    .color {
+      opacity: 1;
+    }
+    .white {
+      opacity: 0;
+    }
+  }
+  .gnb {
+    align-items: flex-start;
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      a {
+        color: #111;
+      }
+    }
+  }
+  .gnb li .sub-item {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    align-items: center;
+    a {
+      font-size:16px;
+      text-align: center;
+      font-weight:400;
+      height:28px;
+      color:#aaa;
+      transition-duration: .3s;
+      cursor: pointer;
+      &:hover {
+        color:#111;
+        transition-duration: .3s;
+      }
+    }
+  }
+  .tools .lang {
+    a {
+      color:rgba(0,0,0,0.5);
+    }
+    a+a {
+      border-left:1px rgba(0,0,0,0.2) solid;
     }
   }
 }
