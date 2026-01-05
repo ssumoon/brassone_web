@@ -530,21 +530,46 @@ header {
       gap:4px;
       flex-direction: column;
       cursor: pointer;
-      span {
+      position: relative;
+      overflow: hidden;
+      > span {
         width:16px;
         height:2px;
         background: #111;
+        position: relative;
+        z-index: 3;
+      }
+      .effect {
+        transform-origin: center;
+        overflow: hidden;
+        width:48px;
+        height:48px;
+        transform: scale(0);
+        background: #fff;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 2;
+        gap:4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition-duration: .3s;
       }
       &:hover,
-      &:focus {
-        background: #fff;
-        transition-duration: .3s;
+      &:focus,
+      &:focus-within {
+        .effect {
+          transform: scale(1);
+          transition-duration: .3s;
+        }
+
       }
     }
   }
   &.fixed {
     height:70px;
-    background: #fff;
+    background: #fafafa;
     transition-duration: .3s;
     border-bottom:1px rgba(0,0,0,0.1) solid;
     .logo-wrap {
@@ -716,9 +741,14 @@ section.sticky {
     overflow: hidden;
     background: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    transition-duration: .5s;
     h4 { font-size:20px; font-weight:800; margin:0 0 8px; }
     h6 { font-size:16px; margin:0; }
     p { font-size:16px; color:#666; margin:10px 0 0; }
+    &:hover {
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.12);
+      transition-duration: .5s;
+    }
   }
 }
 .news-list {
@@ -740,6 +770,7 @@ section.sticky {
     .item {
       padding:0 20px;
       display: block;
+      text-decoration: none;
       .thumb {
         border-radius: 30px;
         background: #f0f0f0;
@@ -747,6 +778,8 @@ section.sticky {
         overflow: hidden;
         img {
           width:100%;
+          transform: scale(1);
+          transition-duration: .3s;
         }
       }
       p {
@@ -762,8 +795,16 @@ section.sticky {
       }
       span {
         color:#aaa;
-        font-size:16px;
-        font-family: Montserrat;
+        font-size:14px;
+        font-family: 'Montserrat';
+      }
+      &:hover, &:focus, &:focus-within {
+        .thumb {
+          img {
+            transform: scale(1.1);
+            transition-duration: .3s;
+          }
+        }
       }
     }
   }
@@ -795,8 +836,14 @@ section.sticky {
       padding:30px;
       display: block;
       border-radius: 30px;
+      transition-duration: .3s;
+      text-decoration: none;
       h4 { font-size:20px; color:#111; font-weight:800; margin:0 0 8px; }
       p { font-size:16px; color:#111; margin:10px 0 0; }
+      &:hover, &:focus, &:focus-within {
+        background:rgba(255,255,255,0.6);
+        transition-duration: .3s;
+      }
     }
   }
 }
