@@ -493,6 +493,7 @@ header {
     li {
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
     .main-item {
       font-family: 'Pretendard';
@@ -500,7 +501,7 @@ header {
       height:50px;
       align-items: center;
       justify-content: center;
-      width:120px;
+      width:130px;
       font-size:16px;
       color:#fff;
       font-weight:700;
@@ -513,10 +514,27 @@ header {
       }
     }
     .sub-item {
-      display: none;
-      margin-top:10px;
-      margin-bottom:30px;
-      transition-duration: .3s;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap:10px;
+      opacity:0;
+      top:80px;
+      transform: translateY(-20px);
+      align-items: center;
+      a {
+        font-size:16px;
+        text-align: center;
+        font-weight:400;
+        height:28px;
+        color:#aaa;
+        transition-duration: .3s;
+        cursor: pointer;
+        &:hover {
+          color:#111;
+          transition-duration: .3s;
+        }
+      }
     }
   }
   .tools {
@@ -610,7 +628,7 @@ header {
         opacity: 0;
       }
     }
-    .gnb li a {
+    .gnb li .main-item {
       color:#111;
       &:hover,
       &:focus {
@@ -641,7 +659,7 @@ header {
 header:hover,
 header:focus,
 header:focus-within {
-  background: #fff;
+  background: #fafafa;
   height:330px;
   transition-duration: .3s;
   .container {
@@ -662,28 +680,29 @@ header:focus-within {
       display: flex;
       flex-direction: column;
       align-items: center;
-      a {
+      .main-item {
         color: #111;
+        &:hover {
+          color:#ecba43;
+        }
       }
     }
   }
   .gnb li .sub-item {
+    position: absolute;
     display: flex;
     flex-direction: column;
     gap:10px;
+    opacity:1;
+    transform: translateY(0px);
+    transition-delay: .2s;
+    transition-duration: .3s;
     align-items: center;
     a {
-      font-size:16px;
-      text-align: center;
-      font-weight:400;
-      height:28px;
       color:#aaa;
-      transition-duration: .3s;
-      cursor: pointer;
-      &:hover {
-        color:#111;
-        transition-duration: .3s;
-      }
+    }
+    a:hover {
+      color:#111;
     }
   }
   .tools .lang {
