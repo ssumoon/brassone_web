@@ -714,6 +714,39 @@ header:focus-within {
     }
   }
 }
+header.sub {
+  background: #fafafa;
+  transition-duration: .3s;
+  border-bottom:1px rgba(0,0,0,0.1) solid;
+  .logo-wrap {
+    .color {
+      opacity: 1;
+    }
+    .white {
+      opacity: 0;
+    }
+  }
+  .gnb li .main-item {
+    color:#111;
+    &:hover,
+    &:focus {
+      color:#ecba43;
+      transition-duration: .3s;
+    }
+  }
+  .tools .lang {
+    a {
+      color:rgba(0,0,0,0.5);
+      &:hover,
+      &.active {
+        color:rgba(0,0,0,1);
+        transition-duration: .3s;
+      }}
+    a+a {
+      border-left:1px rgba(0,0,0,0.2) solid;
+    }
+  }
+}
 .sections-wrapper {
   position: relative;
 }
