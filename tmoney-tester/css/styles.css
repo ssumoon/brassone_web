@@ -38,10 +38,8 @@ html,body {
     flex:0 0 100%;
     position: absolute;
     left:0;
-    top:100%;
 }
 section.active {
-    transform: translateY(-100%);
     display: flex;
 }
 
