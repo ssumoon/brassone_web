@@ -4,6 +4,10 @@ html,body {
     background: #f0f0f0;
     font-family: 'Pretendard Variable', 'Noto Sans KR', inherit;
 }
+body * {
+    font-family: 'Pretendard Variable', 'Noto Sans KR', inherit;
+    letter-spacing: -0.03em;
+}
 
 .container {
     height:100svh;
