@@ -14,7 +14,7 @@ html,body {
 }
 
 body * {
-    font-family: 'Pretendard Variable', 'Noto Sans KR', inherit;
+    font-family: 'Pretendard Variable', 'Noto Sans KR', inherit !important;
     letter-spacing: -0.03em;
 }
 
