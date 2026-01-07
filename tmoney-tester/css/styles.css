@@ -3,11 +3,11 @@
 html,body {
     margin:0;
     background: #f0f0f0;
-    font-family: 'Pretendard Variable', 'Noto Sans KR', inherit;
+    font-family: 'Pretendard Variable', 'Noto Sans KR', sans-serif;
 }
 
 body * {
-    font-family: 'Pretendard Variable', 'Noto Sans KR', inherit !important;
+    font-family: 'Pretendard Variable', 'Noto Sans KR', sans-serif !important;
     letter-spacing: -0.03em;
 }
 
@@ -314,7 +314,7 @@ header span {
     flex:1;
     font-size:16px;
     font-weight:700;
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
     text-align: center;
     line-height:1;
 }
@@ -381,7 +381,7 @@ header span {
     font-size:18px;
     font-weight:700;
     color:#111;
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
     letter-spacing: -0.03em;
     position: relative;
 }
@@ -419,14 +419,14 @@ header span {
     font-size:14px;
     font-weight:700;
     color:#111;
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
 }
 .popup-container .contents p {
     margin:0;
     line-height:1.5;
     color:#666;
     font-size:14px;
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
     word-break: keep-all;
 }
 .inner-container .popup-container button {
@@ -508,7 +508,7 @@ header span {
     align-items: center;
     justify-content: center;
     font-weight:600;
-    font-family: 'Pretendard Variable';
+    font-family: "Pretendard Variable", sans-serif;
 }
 
 .intro-section .a-link {
@@ -660,7 +660,7 @@ header span {
 }
 .result-section .table-style .table-contents .traffic-price p {
     font-weight:700;
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
     color:#03244B;
     margin-top:10px;
 }
@@ -720,7 +720,7 @@ header span {
     border-radius: 50%;
     font-size:10px;
     font-weight:700;
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
     background: #f5f5f5;
     color:#999;
     display: flex;
@@ -927,7 +927,7 @@ header span {
 .result-section .total-result label {
     color:#333;
     font-size:16px;
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
     flex:1;
 }
 .result-section .total-result p {
@@ -969,7 +969,7 @@ header span {
     line-height:1;
     color:#666;
     font-weight:600;
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
     font-size:14px;
 }
 .advice-area .toggle-advice:after {
@@ -993,7 +993,7 @@ header span {
 }
 .advice-area .contents p, .advice-area .contents li {
     font-size:14px;
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
     font-weight:300;
     color:#333;
     line-height:1.6;
@@ -1154,7 +1154,7 @@ footer .item+.item {
     border-left:1px rgba(0,0,0,0.2) solid;
 }
 footer p {
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
     font-size:13px;
     margin:0;
     color:#888;
@@ -1169,7 +1169,7 @@ footer span {
 footer .copyright {
     color:#aaa;
     font-size:12px;
-    font-family: Pretendard;
+    font-family: "Pretendard Variable", sans-serif;
     text-align: center;
 }
 
