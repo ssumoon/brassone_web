@@ -18,8 +18,8 @@
         <div class="wrapper">
           <div class="title">
             <h1>
-              <b>맞춤 교통카드 추천방법</b>을<br/>
-              선택해주세요
+              <b>내게 맞는 교통카드</b>를<br/>
+              찾아볼까요?
             </h1>
             <p>
               수도권(서울, 경기, 인천) 지역만<br/>
@@ -27,14 +27,27 @@
             </p>
           </div>
           <div class="activity-area">
-            <div class="radio-form">
+            <div class="radio-text-box">
               <input name="card" id="tm_card" type="radio" value="tm" checked />
-              <label for="tm_card">이용내역 자동조회</label>
+              <label for="tm_card">
+                <img alt="bulb" src="./img/icon-bulb.png" />
+                <span>
+                  <b class="title">교통카드 번호를 알고 있어요</b>
+                  티머니 교통카드 번호를 입력하면 교통내역 데이터 기준으로 나에게 딱!맞는 교통카드를 추천받을 수 있어요
+                </span>
+              </label>
             </div>
-            <div class="radio-form">
+            <div class="radio-text-box">
               <input name="card" id="cd_card" type="radio" value="cd" />
-              <label for="cd_card">직접 입력하여 계산하기</label>
+              <label for="cd_card">
+                <img alt="submit" src="./img/icon-submit.png" />
+                <span>
+                  <b class="title">직접 정보를 입력할래요</b>
+                  교통카드 번호 없이도 이용금액, 횟수 등의 정보를 직접 입력하여 교통카드를 추천받을 수 있어요
+                </span>
+              </label>
             </div>
+            <a href="#" class="line-text">교통카드 번호 확인방법</a>
           </div>
         </div>
         <button class="next">다음</button>
@@ -44,6 +57,7 @@
           <a class="back-btn"></a>
           <h1>맞춤 교통카드 추천</h1>
         </header>
+        <div class="progress"><span class="fill" style="width: 20%"></span></div>
         <div class="wrapper">
           <div class="title">
             <h1>
@@ -51,36 +65,18 @@
               입력해주세요
             </h1>
             <p>
-              <a class="line-text" href="#">교통카드 번호 확인방법</a>
+              신용/체크카드 번호로는 조회가 어려워요 😢
             </p>
           </div>
           <div class="activity-area">
             <div class="input-form">
               <input type="text" placeholder="`-`를 제외한 카드번호 16자리 입력" />
             </div>
-          </div>
-        </div>
-        <div class="popup-layer">
-          <div class="popup-container">
-            <h4>
-              교통카드 번호 확인방법
-              <a class="close-btn">
-                <span></span>
-                <span></span>
-              </a>
-            </h4>
-            <div class="contents">
-              <h6>모바일티머니 교통카드 이용고객</h6>
-              <p>모바일티머니 앱 > 메뉴(三) > 교통카드 > 교통카드 번호(16자리) 확인</p>
-            </div>
-            <div class="contents">
-              <h6>삼성월렛 티머니 교통카드 이용고객</h6>
-              <p>삼성월렛 앱 > ‘전체’ 메뉴 > 교통카드 > 등록된 ‘티머니 교통카드’ 선택 > 교통카드 번호(16자리 확인)</p>
-            </div>
+            <a href="#" class="line-text">교통카드 번호 확인방법</a>
           </div>
         </div>
         <button class="active-agree">다음</button>
-        <div class="popup-layer agree">
+        <div class="popup-agree">
           <div class="popup-container">
             <h4>
               개인정보 수집 및 이용 동의 (필수)
@@ -113,11 +109,49 @@
           </div>
         </div>
       </section>
+      <section class="legion-sect">
+        <header>
+          <a class="back-btn"></a>
+          <h1>맞춤 교통카드 추천</h1>
+        </header>
+        <div class="progress"><span class="fill" style="width: 60%"></span></div>
+        <div class="wrapper">
+          <div class="title">
+            <h1>
+              <b>거주하고 있는 지역</b>이<br/>
+              어디인가요?
+            </h1>
+            <p>
+              주민등록상 주소를 선택해주세요.
+            </p>
+          </div>
+          <div class="activity-area">
+            <div class="selectbox-form">
+              <label>지역 선택</label>
+              <select name="adr-state">
+                <option value="seoul">서울특별시</option>
+                <option value="incheon">인천광역시</option>
+                <option value="gyeonggi">경기도</option>
+              </select>
+            </div>
+            <div class="selectbox-form city-area">
+              <label>도시 선택</label>
+              <select name="adr-city">
+                <option value="suwon">수원시</option>
+                <option value="yongin">용인시</option>
+                <option value="gwangmyeong">광명시</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button class="next">다음</button>
+      </section>
       <section class="birthday-sect">
         <header>
           <a class="back-btn"></a>
           <h1>맞춤 교통카드 추천</h1>
         </header>
+        <div class="progress"><span class="fill" style="width: 40%"></span></div>
         <div class="wrapper">
           <div class="title">
             <h1>
@@ -137,133 +171,12 @@
         </div>
         <button class="next">다음</button>
       </section>
-      <section class="legion-sect">
-        <header>
-          <a class="back-btn"></a>
-          <h1>맞춤 교통카드 추천</h1>
-        </header>
-        <div class="wrapper">
-          <div class="title">
-            <h1>
-              <b>거주하고 있는 지역</b>이<br/>
-              어디인가요?
-            </h1>
-            <p>
-              주민등록상 주소를 선택해주세요.
-            </p>
-          </div>
-          <div class="activity-area">
-            <div class="radio-form">
-              <input name="adr" id="seoul_adr" value="seoul" type="radio" checked />
-              <label for="seoul_adr">서울특별시</label>
-            </div>
-            <div class="radio-form">
-              <input name="adr" id="gg_adr" value="gg" type="radio" />
-              <label for="gg_adr">경기도</label>
-            </div>
-            <div class="radio-form">
-              <input name="adr" id="ic_adr" value="ic" type="radio" />
-              <label for="ic_adr">인천광역시</label>
-            </div>
-          </div>
-        </div>
-        <button class="next">다음</button>
-      </section>
-      <section class="usedpay-sect">
-        <header>
-          <a class="back-btn"></a>
-          <h1>맞춤 교통카드 추천</h1>
-        </header>
-        <div class="wrapper">
-          <div class="title">
-            <h1>
-              <b>한 달 평균 교통 이용금액</b>은<br/>
-              얼마인가요?
-            </h1>
-            <p>
-              평균적으로 한달에 사용되는 <br/>
-              교통카드 이용금액을 입력해주세요.
-            </p>
-          </div>
-          <div class="activity-area">
-            <div class="input-form">
-              <input type="text" placeholder="금액 입력" />
-              <span>원</span>
-            </div>
-          </div>
-        </div>
-        <button class="next">다음</button>
-      </section>
-      <section class="usedcount-sect">
-        <header>
-          <a class="back-btn"></a>
-          <h1>맞춤 교통카드 추천</h1>
-        </header>
-        <div class="wrapper">
-          <div class="title">
-            <h1>
-              <b>일주일 교통 이용횟수</b>는<br/>
-              몇 회인가요?
-            </h1>
-            <p>
-              환승은 이용횟수에 미포함 됩니다. <br/>
-              예시) 버스 승차-버스 하차-지하철 승차(환승)-지하철 하차 : 1회
-            </p>
-          </div>
-          <div class="activity-area">
-            <div class="input-form">
-              <input type="text" placeholder="횟수 입력" />
-              <span>회</span>
-            </div>
-          </div>
-        </div>
-        <button class="next">다음</button>
-      </section>
-      <section class="method-sect">
-        <header>
-          <a class="back-btn"></a>
-          <h1>맞춤 교통카드 추천</h1>
-        </header>
-        <div class="wrapper">
-          <div class="title">
-            <h1>
-              <b>이용하는 교통수단</b>을<br/>
-              모두 선택해주세요
-            </h1>
-            <p>
-              교통수단은 중복선택이 가능합니다.
-            </p>
-          </div>
-          <div class="activity-area">
-            <div class="check-form">
-              <input id="subway_mt" type="checkbox" />
-              <label for="subway_mt">지하철</label>
-            </div>
-            <div class="check-form">
-              <input id="bus_mt" type="checkbox" />
-              <label for="bus_mt">마을버스·시내버스</label>
-            </div>
-            <div class="check-form">
-              <input id="wbus_mt" type="checkbox" />
-              <label for="wbus_mt">광역버스</label>
-            </div>
-            <div class="check-form">
-              <input id="gtx_mt" type="checkbox" />
-              <label for="gtx_mt">GTX</label>
-            </div>
-            <div class="check-form">
-              <input id="bds_mt" type="checkbox" />
-              <label for="bds_mt">신분당선</label>
-            </div>
-          </div>
-        </div>
-        <button class="next">다음</button>
-      </section>
       <section class="discount-sect">
         <header>
           <a class="back-btn"></a>
           <h1>맞춤 교통카드 추천</h1>
         </header>
+        <div class="progress"><span class="fill" style="width: 80%"></span></div>
         <div class="wrapper">
           <div class="title">
             <h1>
@@ -301,49 +214,46 @@
           </div>
         </div>
         <button class="tm-next" onclick="location.href='./result.html'">나에게 맞는 교통카드 추천받기</button>
-        <button class="etc-next">다음</button>
       </section>
-      <section class="uselegion-sect">
-        <header>
-          <a class="back-btn"></a>
-          <h1>맞춤 교통카드 추천</h1>
-        </header>
-        <div class="wrapper">
-          <div class="title">
-            <h1>
-              <b>이용하는 지역</b>을<br/>
-              모두 선택해주세요.
-            </h1>
-            <p>
-              지역은 중복선택이 가능합니다.
-            </p>
+      <div class="popup-layer">
+        <div class="popup-container">
+          <h4>
+            교통카드 번호 확인방법
+            <a class="close-btn" href="#">
+              <span></span>
+              <span></span>
+            </a>
+          </h4>
+          <div class="contents">
+            <h6>모바일티머니 교통카드 이용고객</h6>
+            <p>모바일티머니 앱 > 메뉴(三) > 교통카드 > 교통카드 번호(16자리) 확인</p>
           </div>
-          <div class="activity-area">
-            <div class="check-form">
-              <input id="seoul_use" type="checkbox" />
-              <label for="seoul_use">서울특별시</label>
-            </div>
-            <div class="check-form">
-              <input id="gg_use" type="checkbox" />
-              <label for="gg_use">경기도</label>
-            </div>
-            <div class="check-form">
-              <input id="ic_use" type="checkbox" />
-              <label for="ic_use">인천광역시</label>
-            </div>
+          <div class="contents">
+            <h6>삼성월렛 티머니 교통카드 이용고객</h6>
+            <p>삼성월렛 앱 > ‘전체’ 메뉴 > 교통카드 > 등록된 ‘티머니 교통카드’ 선택 > 교통카드 번호(16자리 확인)</p>
           </div>
         </div>
-        <button class="end" onclick="location.href='./result.html'">나에게 맞는 교통카드 추천받기</button>
-      </section>
+      </div>
     </div>
   </div>
   <script>
+
+    const popButtons = document.querySelectorAll('.line-text')
+    for (const popButton of popButtons) {
+      popButton.addEventListener('click', function () {
+        document.querySelector('.popup-layer').classList.add('active');
+      });
+    }
+    //닫기 버튼을 눌렀을 때 모달팝업이 닫힘
+    document.querySelector('.popup-layer .close-btn').addEventListener('click', function () {
+      //'active' class 제거
+      document.querySelector('.popup-layer').classList.remove('active');
+    })
 
     // 사용중인 교통카드 section
     document.querySelector('.usecard-sec .back-btn').addEventListener('click', function() {
       history.back();
     });
-
     document.querySelector('.usecard-sec .next').addEventListener('click', function() {
       const selectedType = document.querySelector('input[name="card"]:checked');
       const value = selectedType.value;
@@ -351,11 +261,10 @@
       if (value === 'tm') {
         document.querySelector('.traffic-sect').classList.add('active');
         document.querySelector('.usecard-sec').classList.remove('active');
-        // 티머니 교통카드 선택 시 카드번호 입력 section으로 이동
+        // 이용내역 자동조회 클릭 시 카드번호 입력 section으로 이동
       } else {
-        document.querySelector('.birthday-sect').classList.add('active');
-        document.querySelector('.usecard-sec').classList.remove('active');
-        // 그 외 선택 시 생일 입력 section으로 이동
+        location.href=("./index-case02.html");
+        // 직접입력 선택 시 case2로 이동
       }
     });
 
@@ -366,52 +275,29 @@
       // 뒤로가기 클릭 시 사용중인 교통카드 section으로 이동
     });
     document.querySelector('.traffic-sect .active-agree').addEventListener('click', function() {
-      document.querySelector('.popup-layer.agree').classList.add('active');
+      document.querySelector('.popup-agree').classList.add('active');
       // 클릭시 동의화면 활성화
     });
 
     //닫기 버튼을 눌렀을 때 모달팝업이 닫힘
-    document.querySelector('.popup-layer.agree .close-btn').addEventListener('click', function () {
+    document.querySelector('.popup-agree .close-btn').addEventListener('click', function () {
       //'active' class 제거
-      document.querySelector('.popup-layer.agree').classList.remove('active');
+      document.querySelector('.popup-agree').classList.remove('active');
     });
 
     document.querySelector('.traffic-sect .next').addEventListener('click', function() {
-      document.querySelector('.birthday-sect').classList.add('active');
+      document.querySelector('.legion-sect').classList.add('active');
       document.querySelector('.traffic-sect').classList.remove('active');
       // 다음버튼 클릭 시 생일 입력 section으로 이동
     });
 
-    // 생일입력 section
-    document.querySelector('.birthday-sect .back-btn').addEventListener('click', function() {
-      const selectedType = document.querySelector('input[name="card"]:checked');
-      const value = selectedType.value;
-
-      if (value === 'tm') {
-        document.querySelector('.traffic-sect').classList.add('active');
-        document.querySelector('.birthday-sect').classList.remove('active');
-        // 티머니 교통카드 선택 후 뒤로가기 시 카드번호 입력 section으로 이동
-      } else {
-        document.querySelector('.usecard-sec').classList.add('active');
-        document.querySelector('.birthday-sect').classList.remove('active');
-        // 그 외 선택 후 뒤로가기 시 생일 입력 section으로 이동
-      }
-    });
-    document.querySelector('.birthday-sect .next').addEventListener('click', function() {
-      document.querySelector('.legion-sect').classList.add('active');
-      document.querySelector('.birthday-sect').classList.remove('active');
-      // 다음버튼 클릭 시 거주지 입력 section으로 이동
-    });
-
     // 거주지 입력 section
     document.querySelector('.legion-sect .back-btn').addEventListener('click', function() {
-      document.querySelector('.birthday-sect').classList.add('active');
+      document.querySelector('.traffic-sect').classList.add('active');
       document.querySelector('.legion-sect').classList.remove('active');
       // 뒤로가기 시 생일 입력 section으로 이동
     });
     document.querySelector('.legion-sect .next').addEventListener('click', function() {
-      const selectedType = document.querySelector('input[name="card"]:checked');
-      const value = selectedType.value;
       const selectedTypeLegion = document.querySelector('input[name="adr"]:checked');
       const valueLegion = selectedTypeLegion.value;
 
@@ -422,21 +308,20 @@
         document.querySelector('.outside').classList.remove('display');
         // 할인유형으로 이동할 때 인천이 아닌 값으로 체크한 경우 i+ 혜택이 보이지 않음
       }
+      document.querySelector('.birthday-sect').classList.add('active');
+      document.querySelector('.legion-sect').classList.remove('active');
+    });
 
-      if (value === 'tm') {
-        document.querySelector('.tm-next').style.display = "block";
-        document.querySelector('.etc-next').style.display = "none";
-        // 카드선택에서 티머니를 선택한 경우 tm-next 버튼 활성화
-      }
-      else {
-        document.querySelector('.tm-next').style.display = "none";
-        document.querySelector('.etc-next').style.display = "block";
-        // 카드선택에서 티머니를 선택한 경우 etc-next 버튼 활성화
-      }
-
+    // 생일입력 section
+    document.querySelector('.birthday-sect .back-btn').addEventListener('click', function() {
+      document.querySelector('.legion-sect').classList.add('active');
+      document.querySelector('.birthday-sect').classList.remove('active');
+      // 티머니 교통카드 선택 후 뒤로가기 시 카드번호 입력 section으로 이동
+    });
+    document.querySelector('.birthday-sect .next').addEventListener('click', function() {
       document.querySelector('.discount-sect').classList.add('active');
       document.querySelector('.legion-sect').classList.remove('active');
-      // 다음버튼 클릭 시 할인유형 section으로 이동
+      // 다음버튼 클릭 시 거주지 입력 section으로 이동
     });
 
     // 할인유형 section
@@ -445,67 +330,6 @@
       document.querySelector('.discount-sect').classList.remove('active');
       // 뒤로가기 시 거주지 입력 section으로 이동
     });
-    document.querySelector('.discount-sect .etc-next').addEventListener('click', function() {
-      document.querySelector('.usedpay-sect').classList.add('active');
-      document.querySelector('.discount-sect').classList.remove('active');
-      // 다음버튼 클릭 시 이용금액 section으로 이동
-    });
-
-    // 이용금액 section
-    document.querySelector('.usedpay-sect .back-btn').addEventListener('click', function() {
-      document.querySelector('.discount-sect').classList.add('active');
-      document.querySelector('.usedpay-sect').classList.remove('active');
-      // 뒤로가기 시 할인유형 section으로 이동
-    });
-    document.querySelector('.usedpay-sect .next').addEventListener('click', function() {
-      document.querySelector('.usedcount-sect').classList.add('active');
-      document.querySelector('.usedpay-sect').classList.remove('active');
-      // 다음버튼 클릭 시 이용횟수 section 이동
-    });
-
-    // 이용횟수 section
-    document.querySelector('.usedcount-sect .back-btn').addEventListener('click', function() {
-      document.querySelector('.usedpay-sect').classList.add('active');
-      document.querySelector('.usedcount-sect').classList.remove('active');
-      // 뒤로가기 시 이용금액 section으로 이동
-    });
-    document.querySelector('.usedcount-sect .next').addEventListener('click', function() {
-      document.querySelector('.method-sect').classList.add('active');
-      document.querySelector('.usedcount-sect').classList.remove('active');
-      // 다음버튼 클릭 시 교통수단 section 이동
-    });
-
-    // 교통수단 section
-    document.querySelector('.method-sect .back-btn').addEventListener('click', function() {
-      document.querySelector('.usedcount-sect').classList.add('active');
-      document.querySelector('.method-sect').classList.remove('active');
-      // 뒤로가기 시 이용금액 section으로 이동
-    });
-    document.querySelector('.method-sect .next').addEventListener('click', function() {
-      document.querySelector('.uselegion-sect').classList.add('active');
-      document.querySelector('.method-sect').classList.remove('active');
-      // 다음버튼 클릭 시 이용지역 section 이동
-    });
-
-    // 이용지역 section
-    document.querySelector('.uselegion-sect .back-btn').addEventListener('click', function() {
-      document.querySelector('.method-sect').classList.add('active');
-      document.querySelector('.uselegion-sect').classList.remove('active');
-      // 뒤로가기 시 교통수단 section으로 이동
-    });
-
-    //열기 버튼을 눌렀을 때 모달팝업이 열림
-    document.querySelector('.line-text').addEventListener('click', function () {
-      //'active' class 추가
-      document.querySelector('.popup-layer').classList.add('active');
-    });
-
-    //닫기 버튼을 눌렀을 때 모달팝업이 닫힘
-    document.querySelector('.popup-layer .close-btn').addEventListener('click', function () {
-      //'active' class 제거
-      document.querySelector('.popup-layer').classList.remove('active');
-    });
-
   </script>
 </body>
 </html>

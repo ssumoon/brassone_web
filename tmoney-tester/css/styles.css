@@ -54,6 +54,20 @@ section .wrapper {
     overflow-y:auto;
 
 }
+.inner-container .progress {
+    height:4px;
+    background:#f0f0f0;
+    position: relative;
+}
+.inner-container .progress .fill {
+    background:#9949d2;
+    height:100%;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    width:20px;
+}
 
 .inner-container button {
     height:60px;
@@ -157,6 +171,63 @@ section a.end {
     border-color:#111;
     transition-duration: .2s;
 }
+
+.radio-text-box input[type="radio"] {
+    display: none;
+}
+.radio-text-box input[type="radio"]+label {
+    width:100%;
+    box-sizing: border-box;
+    padding:20px 30px 20px 15px;
+    outline: none;
+    border:1px #e2e4e7 solid;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition-duration: .2s;
+    display: flex;
+    align-items: flex-start;
+    font-weight:500;
+    position: relative;
+}
+.radio-text-box span {
+    flex:1;
+    color:#999;
+    font-size:14px;
+    line-height:1.6;
+    word-break: keep-all;
+}
+.radio-text-box img {
+    width:28px;
+    margin-right:20px;
+    opacity: 0.3;
+    transition-duration: .2s;
+    margin-top:8px;
+}
+
+.radio-text-box .title {
+    font-size:17px;
+    display: block;
+    margin:0 0 8px;
+}
+.radio-text-box input[type="radio"]:checked+label {
+    border:1px #9949d2 solid;
+    transition-duration: .2s;
+}
+
+.radio-text-box input[type="radio"]:checked+label span {
+    color:#111;
+    transition-duration: .2s;
+}
+
+.radio-text-box input[type="radio"]:checked+label img {
+    opacity: 0.8;
+    transition-duration: .2s;
+}
+
+
+
+
 
 .radio-form input[type="radio"] {
     display: none;
@@ -592,11 +663,13 @@ header span {
     max-width:380px;
     width:80%;
     background: url('../img/visual-case01-bg.png') center no-repeat;
-    background-size:100%;
-    padding-right:30px;
+    background-size:contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .result-section .card-area .visual-img img {
-    max-width:260px;
+    max-width:420px;
     display: block;
     margin:0 auto;
 }
@@ -870,6 +943,16 @@ header span {
     bottom:40px;
 }
 
+.result-section .advice-text {
+    font-size:16px;
+    line-height:1.5;
+    color:#111;
+    font-weight:500;
+    text-align: center;
+    margin:20px 0;
+
+}
+
 .result-section .advice-box {
     background: #F5F5F5;
     padding:16px;
@@ -879,7 +962,7 @@ header span {
     margin-bottom:40px;
 }
 .result-section .advice-box p {
-     
+
     flex:1;
     font-size:14px;
     color:#333;
@@ -906,7 +989,7 @@ header span {
 .result-section .advice-box .adv-btn {
     background: #5DFFBC;
     font-size:11px;
-     
+    margin-left:10px;
     display: flex;
     height:34px;
     padding:0 12px;
@@ -1033,8 +1116,7 @@ header span {
     max-width:380px;
     width:80%;
     background: url('../img/visual-case02-bg.png') center no-repeat;
-    background-size:100%;
-    padding-right:30px;
+    background-size:contain;
 }
 .result-section.case02 .card-area .area-tail {
     width:48px;
@@ -1067,8 +1149,7 @@ header span {
     max-width:380px;
     width:80%;
     background: url('../img/visual-case03-bg.png') center no-repeat;
-    background-size:100%;
-    padding-right:0;
+    background-size:contain;
 }
 .result-section.case03 .card-area .area-tail {
     width:48px;
@@ -1085,8 +1166,18 @@ header span {
 .result-section .total-result p {
     color:#231815;
 }
-
-.popup-layer.agree .popup-container {
+.popup-agree {
+    max-width:768px;
+    width:100%;
+    height:100%;
+    position: fixed;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+.popup-agree.active {
+    display: block;
+}
+.popup-agree .popup-container {
     top:auto;
     bottom:0;
     left:0;
@@ -1097,39 +1188,39 @@ header span {
     flex-direction: column;
     border-radius:20px 20px 0 0;
 }
-.popup-layer.agree .popup-container .contents {
+.popup-agree .popup-container .contents {
     background: #fff;
     max-height:50vh;
     overflow-y: scroll;
 }
-.popup-layer.agree .popup-container dt {
+.popup-agree .popup-container dt {
     font-size:14px;
     text-align: left;
     margin-top:12px;
     font-weight:700;
     margin-bottom:5px;
 }
-.popup-layer.agree .popup-container dd {
+.popup-agree .popup-container dd {
     font-size:14px;
     margin:0;
     padding-bottom:12px;
     border-bottom:1px #e2e4e7 solid;
     text-align: left;
 }
-.popup-layer.agree .popup-container dd p {
+.popup-agree .popup-container dd p {
     font-size:13px;
     text-align: left;
     padding-left:14px;
     position: relative;
     margin-bottom:10px;
 }
-.popup-layer.agree .popup-container dd p:before {
+.popup-agree .popup-container dd p:before {
     content:'-';
     position: absolute;
     left:0;
     top:1px;
 }
-.popup-layer.agree .popup-container .check-texttype {
+.popup-agree .popup-container .check-texttype {
     padding:15px 20px 15px;
 }
 
