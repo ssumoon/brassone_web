@@ -1158,14 +1158,39 @@ footer {
 }
 .title-area .breadcrumb li {
   position: relative;
-  }
+}
+.title-area .breadcrumb .home {
+  height:38px;
+  display: flex;
+  align-items: center;
+}
+.title-area .breadcrumb .home img {
+  width:18px;
+  height:18px;
+  display: block;
+  margin-bottom:4px;
+}
+
 .title-area .breadcrumb .link-item {
   font-size:14px;
   color:#111;
   height:38px;
   display: flex;
   align-items: center;
+  padding-right:30px;
 }
+
+.title-area .breadcrumb .link-item span {
+  position: absolute;
+  right:0;
+  margin-bottom:3px;
+  width:20px;
+  height:20px;
+}
+.title-area .breadcrumb .link-item img {
+  width:100%;
+}
+
 .title-area .breadcrumb .sub-item {
   position: absolute;
   display: flex;
