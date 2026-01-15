@@ -1154,7 +1154,7 @@ footer {
   display: flex;
   list-style-type: none;
   padding:0;
-  gap:40px;
+  gap:20px;
 }
 .title-area .breadcrumb li {
   position: relative;
@@ -1178,6 +1178,7 @@ footer {
   display: flex;
   align-items: center;
   padding-right:30px;
+  padding-left:10px;
 }
 
 .title-area .breadcrumb .link-item span {
