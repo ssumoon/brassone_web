@@ -1131,7 +1131,11 @@ footer {
 /* sub layout common */
 
 .title-area {
-  margin-top:160px;
+  padding-top:250px;
+  position: relative;
+  transition: padding-top 0.5s ease;
+  height: 100vh;
+  box-sizing: border-box;
 }
 .title-area h5 {
   color:#ecba43;
@@ -1139,6 +1143,8 @@ footer {
   font-weight:700;
   margin:0 0 20px;
   line-height:1;
+  position: relative;
+  z-index: 1;
 }
 .title-area h1 {
   color:#111;
@@ -1146,15 +1152,25 @@ footer {
   line-height:1.2;
   font-weight:800;
   margin:0 0 40px;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 1;
 }
 .title-area .breadcrumb {
   display: flex;
   list-style-type: none;
   padding:0;
   gap:20px;
+  position: relative;
+  z-index: 1;
 }
 .title-area .breadcrumb li {
   position: relative;
+  transition: all 0.5s ease;
+}
+.title-area .breadcrumb li a {
+  color: #333333;
+  transition: all 0.5s ease;
 }
 .title-area .breadcrumb .home {
   height:38px;
@@ -1233,10 +1249,16 @@ footer {
 }
 
 .sub-head-img {
-  margin-top:40px;
   height:460px;
-  width:100%;
-  background:#f0f0f0;
+  background:#666666;
+  position: absolute;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  bottom: 0;
+  transition: all 0.5s ease;
+  left: 0;
+  right: 0;
 }
 
 
