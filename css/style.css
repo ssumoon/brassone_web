@@ -461,6 +461,7 @@ header {
   box-sizing: border-box;
   transition-duration: .3s;
   border-bottom:1px rgba(255,255,255,0.1) solid;
+  overflow: hidden;
   .logo-wrap {
     position: relative;
     height:50px;
@@ -520,7 +521,8 @@ header {
       gap:10px;
       opacity:0;
       top:80px;
-      transform: translateY(-400px);
+      transition-duration: .3s;
+      transform: translateY(-20px);
       align-items: center;
       a {
         font-size:16px;
@@ -694,6 +696,7 @@ header:focus-within {
     gap:10px;
     opacity:1;
     transform: translateY(0px);
+    transition-duration: .3s;
     align-items: center;
     a {
       color:#aaa;
