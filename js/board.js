@@ -16,6 +16,8 @@ window.addEventListener('load', function () {
             boardDetailMetaTitleElement.style.color = '#ffffff';
             boardDetailBreadcrumbItems.forEach(function (element) {
                 element.style.color = '#ffffff';
+                const icon = element.querySelector('img');
+                icon.style.filter = 'invert(1)';
             });
         } else {
             boardDetailElement.style.paddingTop = null;
@@ -25,6 +27,8 @@ window.addEventListener('load', function () {
             boardDetailMetaTitleElement.style.color = null;
             boardDetailBreadcrumbItems.forEach(function (element) {
                 element.style.color = null;
+                const icon = element.querySelector('img');
+                icon.style.filter = null;
             });
         }
     });
