@@ -9,15 +9,16 @@ window.addEventListener('load', function () {
         const scrollY = window.scrollY;
 
         if (scrollY > 0) {
-            boardDetailElement.style.paddingTop = '500px';
+            boardDetailElement.style.paddingTop = '460px';
             boardDetailMainImgElement.style.maxWidth = '100%';
-            boardDetailMainImgElement.style.height = '100vh';
+            boardDetailMainImgElement.style.height = '90vh';
             boardDetailMainImgImgElement.style.opacity = '0.45';
             boardDetailMetaTitleElement.style.color = '#ffffff';
             boardDetailBreadcrumbItems.forEach(function (element) {
                 element.style.color = '#ffffff';
                 const icon = element.querySelector('img');
                 icon.style.filter = 'invert(1)';
+                icon.style.transition = '0.3s';
             });
         } else {
             boardDetailElement.style.paddingTop = null;
