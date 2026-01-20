@@ -1438,12 +1438,14 @@ footer {
     }
   }
 }
-
+.map-area {
+  background: #f0f0f0;
+  height:480px;
+  margin-top:40px;
+}
 .contact-info {
   margin-top:60px;
-  padding-top:60px;
   padding-bottom:120px;
-  border-top:1px #e2e4e7 solid;
   display: flex;
   gap:60px;
   .unit {
