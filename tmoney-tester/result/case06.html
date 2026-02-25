@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>교통카드 개인 맞춤 추천 서비스</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="../js/jquery.counterup.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+</head>
+<body>
+  <div class="container overflow">
+    <header>
+      <a class="back-btn"></a>
+      <h1>교통비 최대 환급금 조회</h1>
+    </header>
+    <section class="result-various">
+      <div class="title">
+        <h2>
+          <b>모두의 카드 일반형</b> 이용하면<br/>
+          <b><i>최대</i> 37,000원 <i>환급</i></b> 받아요!
+        </h2>
+      </div>
+      <div class="info">
+        <div class="row total">
+          <p>한달 교통비(예상)</p>
+          <h4>120,000원</h4>
+        </div>
+        <div class="row head">
+          <label>구분</label>
+          <label>절약금액</label>
+        </div>
+        <div class="principal">
+          <a class="item">
+            <div class="img-wrapper">
+              <img src="../img/icon-kpass.png" />
+            </div>
+            <div class="card-name">
+              <p>K-패스</p>
+              <span>모두의 카드 플러스형 / 청년</span>
+            </div>
+            <div class="card-price">
+              -30,000원
+            </div>
+            <div class="icon">
+              <img src="../img/arr-wt.png">
+            </div>
+          </a>
+          <div class="sub-wrapper">
+            <a class="item sub">
+              <div class="img-wrapper">
+                <img src="../img/icon-together.png" />
+              </div>
+              <div class="card-name">
+                <p>기후동행카드</p>
+              </div>
+              <div class="card-price">
+                -10,000원
+              </div>
+            </a>
+            <a class="item sub">
+              <div class="img-wrapper">
+                <img src="../img/icon-carduse.png" />
+              </div>
+              <div class="card-name">
+                <p>신용/체크카드</p>
+              </div>
+              <div class="card-price">
+                -0원
+              </div>
+            </a>
+          </div>
+          <div class="tmoney-benefit">
+            <div class="item">
+              <div class="img-wrapper">
+                <img src="../img/icon-tm.png" />
+              </div>
+              <div class="card-name">
+                <p>모바일티머니 K-패스 추가 환급</p>
+              </div>
+              <div class="card-price">
+                -2,000원
+              </div>
+            </div>
+            <div class="item">
+              <div class="img-wrapper">
+                <img src="../img/icon-tm.png" />
+              </div>
+              <div class="card-name">
+                <p>모바일티머니 K-패스 이벤트 환급</p>
+              </div>
+              <div class="card-price">
+                -5,000원
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="save-comment">
+          <p>교통비 최대 절약금액</p>
+          <div class="count-group">
+            <h4 class="counter">-25,000</h4><span>원</span>
+            <script>
+              $(document).ready(function () {
+                $('.counter').counterUp({
+                  delay: 10, // 딜레이
+                  time: 1000 // 총 시간
+                });
+              });
+            </script>
+          </div>
+
+        </div>
+      </div>
+      <div class="details-contents">
+        <button class="submit">모바일티머니 K-패스 실적보기</button>
+      </div>
+      <div class="box">
+        <div class="copy">
+          <h4>모바일티머니에서 K-패스</h4>
+          <p>
+            <b>5천원 100% 추가환급</b> 이벤트 진행중! 🎉
+          </p>
+        </div>
+        <div class="visual-img kpass">
+          <img src="../img/visual-case01.png" />
+        </div>
+      </div>
+    </section>
+    <div class="advice-area active">
+      <button class="toggle-advice">
+        <img class="icon" src="../img/icon-exc.png" />
+        <p>꼭 확인해주세요</p>
+      </button>
+      <div class="contents">
+        <p>본 서비스는 고객님의 효율적인 교통비 절약을 돕기 위해 객관적인 데이터 분석을 거친 참고 자료입니다. 아래 유의사항을 반드시 확인하시고, 최종적인 상품 선택 및 이용결정은 고객님께서 신중히 내려주시기를 부탁드립니다.</p>
+        <ul>
+          <li>추천 결과로 제시된 예상 절약 금액 및 월 교통비는 고객님께서 입력하신 데이터 기반으로, 향후에도 유사하게 지속될 것이라는 가정 하에 산출된 단순 추정치입니다.</li>
+          <li>고객님의 실제 이용 패턴이 변하거나, 각 상품의 정책(예:환급률, 적용 범위 등)이 변경될 경우 실제 혜택 금액과 차이가 발생할 수 있습니다.</li>
+          <li>주거 환경, 다른 교통수단 이용 여부 등 개인의 특수 사정을 고려한 최종 결정은 고객님 본인의 판단 하에 이루어져야 합니다.</li>
+          <li>모바일티머니 교통카드 번호를 입력하여 결과를 조회한 고객의 경우, 입력하신 카드 번호를 기준으로 최근 3개월 교통결제 이력 중 이용금액이 가장 큰 월(1개월)을 기준으로 산정된 결과가 제공됩니다.</li>
+          <li>각 교통 상품의 정확하고 최신화된 이용 방법, 혜택 구성, 세부 약관 등은 해당 상품의 공식 사업 주체 사이트를 통해 직접 확인하시기 바랍니다.</li>
+          <li>본 서비스의 분석 결과를 활용하여 교통 상품을 선택함으로써 발생할 수 있는 직, 간접적인 모든 손해에 대해 법적 책임을 부담하지 않음을 알려드립니다.</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <p class="item"><span>주식회사 티머니 대표이사</span>김태극</p>
+      </div>
+      <div class="row">
+        <p class="item"><span>통신판매업 신고번호</span>2013-서울중구-0272</p>
+        <p class="item"><span>사업자 등록번호</span>104-81-83559</p>
+      </div>
+      <div class="row">
+        <p class="item"><span>고객센터 전화번호</span>1644-0088</p>
+        <p class="item"><span>사업장 소재지</span>서울시 중구 후암로 110</p>
+      </div>
+      <span class="copyright">ⓒ Tmoney Co., Ltd.</span>
+    </footer>
+  </div>
+  <script>
+    // header btn
+    document.querySelector('.back-btn').addEventListener('click', function() {
+      history.back();
+    });
+
+    const itemOpen = document.querySelector('.principal .item');
+    itemOpen.addEventListener('click',() => {
+      const item = itemOpen.parentElement;
+      item.classList.toggle('active'); // 액티브 추가토글
+    });
+
+    const anchor = document.querySelector('.advice-area .toggle-advice');
+    anchor.addEventListener('click',() => {
+      const item = anchor.parentElement;
+      item.classList.toggle('active'); // 액티브 추가토글
+    });
+  </script>
+</body>
+</html>
