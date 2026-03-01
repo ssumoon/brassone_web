@@ -60,7 +60,7 @@ section .wrapper {
     position: relative;
 }
 .inner-container .progress .fill {
-    background:#9949d2;
+    background:#7d52e3;
     height:100%;
     position: absolute;
     top:0;
@@ -104,7 +104,7 @@ section a.end {
     border-radius: 50%;
 }
 .bl-group span.active {
-    background: #9949d2;
+    background: #7d52e3;
 }
 
 .title h1 {
@@ -141,7 +141,6 @@ section a.end {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    margin-bottom:20px;
 }
 .selectbox-form select {
     flex:1;
@@ -290,7 +289,7 @@ section a.end {
     margin:0 0 8px;
 }
 .radio-text-box input[type="radio"]:checked+label {
-    border:1px #9949d2 solid;
+    border:1px #7d52e3 solid;
     transition-duration: .2s;
 }
 
@@ -330,7 +329,7 @@ section a.end {
     position: relative;
 }
 .radio-form input[type="radio"]:checked+label {
-    border:1px #9949d2 solid;
+    border:1px #7d52e3 solid;
     transition-duration: .2s;
     color:#111;
 }
@@ -349,7 +348,7 @@ section a.end {
     transition-duration: .2s;
 }
 .radio-form input[type="radio"]:checked+label:after {
-    border-color:#9949d2;
+    border-color:#7d52e3;
     transition-duration: .2s;
 }
 
@@ -375,7 +374,7 @@ section a.end {
     position: relative;
 }
 .check-form input[type="checkbox"]:checked+label {
-    border:1px #9949d2 solid;
+    border:1px #7d52e3 solid;
     transition-duration: .2s;
     color:#111;
 }
@@ -396,7 +395,7 @@ section a.end {
     background-size:100%;
 }
 .check-form input[type="checkbox"]:checked+label:after {
-    background-color: #9949d2;
+    background-color: #7d52e3;
     transition-duration: .2s;
 }
 
@@ -438,12 +437,12 @@ section a.end {
     margin-right:10px;
 }
 .check-texttype input[type="checkbox"]:checked+span:before {
-    background-color: #9949d2;
+    background-color: #7d52e3;
     transition-duration: .2s;
 }
 
 .line-text { display: flex; align-items: center; padding:5px 0; text-decoration: none; color:#666; font-size:15px;   font-weight:400; }
-.line-text:before { content:'!'; width:20px; height:20px; margin-right:8px; display: flex; border-radius: 50%; align-items: center; justify-content: center; font-size:12px; color:#fff; background: #9949d2; }
+.line-text:before { content:'!'; width:20px; height:20px; margin-right:8px; display: flex; border-radius: 50%; align-items: center; justify-content: center; font-size:12px; color:#fff; background: #7d52e3; }
 .line-text:hover { color:#111; border-color:#111; }
 
 header {
@@ -1247,6 +1246,7 @@ header span {
 }
 .popup-agree {
     max-width:768px;
+    top:0;
     width:100%;
     height:100%;
     position: fixed;
@@ -1592,17 +1592,172 @@ footer .copyright {
         .count-group {
             display: flex;
             flex-direction: row;
-            align-items: baseline;
+            align-items: center;
         }
         span {
+            color:#7630F0;
             font-size:16px;
             padding-left:5px;
+            font-weight:700;
+            padding-top:5px;
         }
     }
 }
 .counter {
     animation-duration: 1s;
     animation-delay: 0s;
+}
+
+.page-layer {
+    background: #fafafa;
+    overflow-y: scroll;
+    margin-bottom:60px;
+    padding-bottom:30px;
+    position: relative;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    header {
+        background: #8b63e9;
+        position: fixed;
+        top:0;
+        color:#fff;
+        .back-btn:before, .back-btn:after {
+            background: #fff;
+        }
+    }
+    .title-area {
+        padding:60px 20px 30px;
+        background: linear-gradient(180deg,rgba(146, 107, 237, 1) 0%, rgba(122, 79, 225, 1) 100%);
+        img {
+            margin-top:10px;
+            display: block;
+            width:30px;
+            line-height:0;
+        }
+        h1 {
+            margin-top:15px;
+            font-size:22px;
+            color:#fff;
+            font-weight:400;
+            b {
+                font-weight:700;
+            }
+        }
+        p {
+            color:#fff;
+            font-size:14px;
+            line-height:1.8;
+            margin:15px 0 10px;
+        }
+    }
+    .wrapper {
+        padding:0;
+    }
+    .activity-area {
+        margin-top:-20px;
+        margin-left:20px;
+        margin-right:20px;
+    }
+
+    .radio-text-box input[type="radio"] {
+        display: none;
+    }
+    .radio-text-box input[type="radio"]+label {
+        width:100%;
+        box-sizing: border-box;
+        padding:20px 30px 20px 15px;
+        outline: none;
+        border:1px #e2e4e7 solid;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        transition-duration: .2s;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-weight:500;
+        position: relative;
+    }
+    .radio-text-box span {
+        flex:1;
+        color:#999;
+        font-size:14px;
+        line-height:1.6;
+        word-break: keep-all;
+    }
+    .radio-text-box img {
+        width:28px;
+        margin:0;
+        opacity: 0.3;
+        transition-duration: .2s;
+    }
+
+    .radio-text-box .title {
+        font-size:17px;
+        color:#999;
+        display: block;
+        margin:12px 0 8px;
+    }
+    .radio-text-box input[type="radio"]:checked+label {
+        border:1px #7d52e3 solid;
+        transition-duration: .2s;
+    }
+
+    .radio-text-box input[type="radio"]:checked+label span {
+        color:#111;
+        transition-duration: .2s;
+    }
+
+    .radio-text-box input[type="radio"]:checked+label .title {
+        color:#111;
+        transition-duration: .2s;
+    }
+
+    .radio-text-box input[type="radio"]:checked+label img {
+        opacity: 0.8;
+        transition-duration: .2s;
+    }
+    .line-text {
+        color:#111;
+        font-weight:600;
+    }
+    button {
+        position: fixed;
+        bottom:0;
+        height:60px;
+        background: #7d52e3;
+        color:#fff;
+        font-size:14px;
+        font-weight:700;
+        border:0;
+        max-width: 768px;
+        width: 100%;
+    }
+    .survey-area {
+        padding-top:15px;
+        section {
+            padding:15px 20px;
+        }
+        .survey-title {
+            h4 {
+                font-size:18px;
+                font-weight:400;
+                color:#111;
+                margin:0;
+            }
+            p {
+                margin-top:8px;
+                color:#666;
+                font-size:14px;
+            }
+        }
+        .activity-form, .outside {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+    }
 }
 
 
