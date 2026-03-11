@@ -1624,6 +1624,7 @@ footer .copyright {
         background: #8b63e9;
         position: fixed;
         top:0;
+        z-index:10;
         color:#fff;
         .back-btn:before, .back-btn:after {
             background: #fff;
