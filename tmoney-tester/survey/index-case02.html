@@ -23,7 +23,7 @@
           </h1>
         </div>
         <div class="survey-area">
-          <section>
+          <section class="box">
             <div class="survey-title">
               <h4>
                 <b>거주하고 있는 지역</b>이 어디인가요?
@@ -55,7 +55,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="box">
             <div class="survey-title">
               <h4>
                 <b>한 달 평균 교통 이용금액</b>은 얼마인가요?
@@ -71,7 +71,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="box">
             <div class="survey-title">
               <h4>
                 <b>일주일 교통 이용횟수</b>는 몇 회인가요?
@@ -87,7 +87,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="box">
             <div class="survey-title">
               <h4>
                 <b>이용하는 교통수단</b>을 모두 선택해주세요
@@ -119,7 +119,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="box">
             <div class="survey-title">
               <h4>
                 <b>이용하는 지역</b>을 모두 선택해주세요.
@@ -143,7 +143,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="box">
             <div class="survey-title">
               <h4>
                 <b>생년월일</b>을 입력해주세요
@@ -158,7 +158,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="box">
             <div class="survey-title">
               <h4>
                 <b>해당하는 할인유형</b>이 있다면 선택해주세요
@@ -194,7 +194,7 @@
           </section>
         </div>
       </div>
-      <button class="active-agree">다음</button>
+      <button class="active-agree disabled" disabled>다음</button>
       <div class="popup-agree">
         <div class="popup-container">
           <h4>
@@ -249,7 +249,22 @@
     </div>
   </div>
   <script>
+    const boxes = document.querySelectorAll('.box');
 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('on');
+          }, index * 150);
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+    boxes.forEach(box => observer.observe(box));
+  </script>
+  <script>
     const popButtons = document.querySelectorAll('.line-text')
     for (const popButton of popButtons) {
       popButton.addEventListener('click', function () {

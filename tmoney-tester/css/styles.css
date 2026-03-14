@@ -1611,7 +1611,19 @@ footer .copyright {
 
 /* 프로세스 추가부분 시작 */
 
+.box {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+.box.on {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 .page-layer {
+    min-height:100vh;
     background: #fafafa;
     overflow-y: scroll;
     margin-bottom:60px;
@@ -1738,10 +1750,17 @@ footer .copyright {
         max-width: 768px;
         width: 100%;
     }
+
+    button.disabled {
+        background: #ddd;
+        color:#999;
+    }
+
     .survey-area {
-        padding-top:15px;
+        padding-top:10px;
+        padding-bottom:30px;
         section {
-            padding:15px 20px;
+            padding:40px 20px;
         }
         .survey-title {
             h4 {
