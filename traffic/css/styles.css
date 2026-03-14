@@ -333,24 +333,36 @@ header {
     left:0;
     right:0;
     z-index: 3;
-    box-sizing: border-box;
     transition-duration: .3s;
     overflow: hidden;
     .logo-wrap {
-        position: relative;
-        height:50px;
         display: flex;
-        align-items: center;
-        line-height:0;
-        .color {
-            width:140px;
-            position: absolute;
-            z-index: 2;
-            opacity: 0;
+        align-items: flex-end;
+        .logo-img {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height:46px;
+            line-height:0;
+            .color {
+                position: absolute;
+                z-index: 2;
+                opacity: 0;
+                height:100%;
+                top:1px;
+            }
+            .white {
+                height:100%;
+                line-height:0;
+            }
         }
-        .white {
-            width:140px;
+        span {
+            line-height:1;
+            color:#fff;
+            padding-bottom:10px;
+            padding-left:10px;
         }
+
     }
     .container {
         display: flex;
@@ -420,12 +432,19 @@ header {
         transition-duration: .3s;
         border-bottom:1px rgba(0,0,0,0.1) solid;
         .logo-wrap {
-            .color {
-                opacity: 1;
+            .logo-img {
+                .color {
+                    opacity: 1;
+                }
+                .white {
+                    opacity: 0;
+                }
             }
-            .white {
-                opacity: 0;
+            span {
+                color:#666;
+                transition-duration: .3s;
             }
+
         }
         .gnb li .main-item {
             color:#111;
@@ -453,12 +472,19 @@ header:focus-within {
         transition-duration: .3s;
     }
     .logo-wrap {
-        .color {
-            opacity: 1;
+        .logo-img {
+            .color {
+                opacity: 1;
+            }
+            .white {
+                opacity: 0;
+            }
         }
-        .white {
-            opacity: 0;
+        span {
+            color:#666;
+            transition-duration: .3s;
         }
+
     }
     .gnb {
         align-items: flex-start;

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="./js/app.js"></script>
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+<header id="header">
+  <div class="container">
+    <a href="../index.html" class="logo-wrap">
+      <div class="logo-img">
+        <img class="color" src="../img/logo-color.png" />
+        <img class="white" src="../img/logo-white.png" />
+      </div>
+      <span>디지털역사관</span>
+    </a>
+    <ul class="gnb">
+      <li>
+        <a href="./highlight/120th.html" class="main-item">HIGHLIGHT</a>
+        <div class="sub-item">
+          <a href="./highlight/120th.html">120TH ANNIVERSARY</a>
+          <a href="./highlight/insight.html">KNUT INSIGHT</a>
+        </div>
+      </li>
+      <li>
+        <a href="./history/chungju.html" class="main-item">HISTORY</a>
+        <div class="sub-item">
+          <a href="./history/chungju.html">충주대학교</a>
+          <a href="./history/cheongju.html">청주과학대학</a>
+          <a href="./history/train.html">한국철도대학</a>
+          <a href="./history/traffic.html">국립한국교통대학교</a>
+        </div>
+      </li>
+      <li>
+        <a href="./interview/birth.html" class="main-item">INTERVIEW</a>
+        <div class="sub-item">
+          <a href="./interview/birth.html">개교 120주년 기념</a>
+          <a href="./interview/president.html">윤승조 총장 대담</a>
+        </div>
+      </li>
+      <li>
+        <a href="./timeless/seasons.html" class="main-item">TIMELESS</a>
+        <div class="sub-item">
+          <a href="./timeless/seasons.html">SEASONS OF KNUT</a>
+          <a href="./timeless/scenes.html">SCENES OF KNUT</a>
+          <a href="./timeless/spirit.html">SPIRIT OF KNUT</a>
+        </div>
+      </li>
+      <li>
+        <a href="./ebook.html" class="main-item">E-BOOK</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<section class="visual-area">
+  <div class="txt-box">
+    <p>120년, 길을 내고 미래를 잇다, 국립한국교통대학교</p>
+    <h1>Together, get better!</h1>
+    <span>Korea National University of Transportation</span>
+  </div>
+  <div class="bg-img">
+    <div class="cover">Korea National University of Transportation</div>
+    <img src="./img/bg-main.jpg" />
+  </div>
+</section>
+<section class="slider-area">
+  <div class="container">
+    <div class="slider-wrapper">
+      <h2 class="slider-title">
+        대한민국 교통과 역사를 함께해 온
+        <b>국립한국교통대학교의 어제와 오늘</b>
+      </h2>
+    </div>
+  </div>
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img src="./img/slider-img01.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./img/slider-img02.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./img/slider-img03.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./img/slider-img01.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./img/slider-img02.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./img/slider-img03.jpg" />
+      </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+<section class="quick-area">
+  <div class="quick-link">
+    <a class="insight">
+      <h4>knut insight</h4>
+      <p>바로가기</p>
+      <div class="cover"></div>
+      <img class="bg" src="./img/bg-quick01.jpg" />
+    </a>
+    <a class="interview">
+      <h4>special interview</h4>
+      <p>바로가기</p>
+      <div class="cover"></div>
+      <img class="bg" src="./img/bg-quick02.jpg" />
+    </a>
+    <a class="seasons">
+      <h4>seasons of knut</h4>
+      <p>바로가기</p>
+      <div class="cover"></div>
+      <img class="bg" src="./img/bg-quick03.jpg" />
+    </a>
+  </div>
+</section>
+<footer>
+  <p>충청북도 충주시 대학로 50   TEL. 043-841-5114</p>
+  <span>COPYRIGHT 2026 Korea National University of Transportation. ALL RIGHTS RESERVED.</span>
+</footer>
+<script>
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 2.5,
+    spaceBetween: 40,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+</body>
+</html>
