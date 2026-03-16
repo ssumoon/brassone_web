@@ -14,42 +14,156 @@
         <a class="back-btn"></a>
         <h1>교통카드 추천</h1>
       </header>
-      <div class="wrapper">
-        <div class="title-area">
-          <h1>
-            <b>내게 맞는 교통카드</b>를 찾아볼까요?
-          </h1>
-          <p>
-            수도권(서울, 경기, 인천) 지역만<br/>
-            맞춤 교통카드 추천 서비스가 제공됩니다.
-          </p>
-        </div>
-        <div class="activity-area">
-          <div class="radio-text-box">
-            <input name="card" id="tm_card" type="radio" value="tm" checked />
-            <label for="tm_card">
-              <img alt="bulb" src="../img/icon-bulb.png" />
-              <b class="title">교통카드 번호를 알고 있어요</b>
-              <span>
+      <div class="inner-container">
+        <section class="intro active">
+          <div class="wrapper">
+            <div class="title-area">
+              <h1>
+                <b>내게 맞는 교통카드</b>를 찾아볼까요?
+              </h1>
+              <p>
+                K-패스, 모두의 카드 무제한 혜택부터 기후동행까지!<br/>
+                내 교통비 최대 환급받는 카드를 알려드려요!
+              </p>
+            </div>
+            <div class="activity-area">
+              <div class="radio-text-box">
+                <input name="card" id="tm_card" type="radio" value="tm" checked />
+                <label for="tm_card">
+                  <img alt="bulb" src="../img/icon-bulb.png" />
+                  <b class="title">교통카드 번호를 알고 있어요</b>
+                  <span>
                 티머니 교통카드 번호를 입력하면 교통내역 데이터 기준으로
                 나에게 딱! 맞는 교통카드를 추천받을 수 있어요
               </span>
-            </label>
-          </div>
-          <div class="radio-text-box">
-            <input name="card" id="cd_card" type="radio" value="cd" />
-            <label for="cd_card">
-              <img alt="submit" src="../img/icon-submit.png" />
-              <span>
+                </label>
+              </div>
+              <div class="radio-text-box">
+                <input name="card" id="cd_card" type="radio" value="cd" />
+                <label for="cd_card">
+                  <img alt="submit" src="../img/icon-submit.png" />
+                  <span>
                   <b class="title">직접 정보를 입력할래요</b>
                   교통카드 번호 없이도 이용금액, 횟수 등의 정보를 직접 입력하여 교통카드를 추천받을 수 있어요
                 </span>
-            </label>
+                </label>
+              </div>
+              <a href="#" class="line-text">교통카드 번호 확인방법</a>
+            </div>
           </div>
-          <a href="#" class="line-text">교통카드 번호 확인방법</a>
-        </div>
+          <button class="tm-next">다음</button>
+        </section>
+        <section class="survey-case01">
+          <div class="wrapper">
+            <div class="title-area">
+              <img src="../img/icon-card-wt.png" />
+              <h1>
+                <b>맞춤 교통카드</b>를 찾기 위해<br/>
+                아래 정보가 필요해요
+              </h1>
+            </div>
+            <div class="survey-area">
+              <section class="box">
+                <div class="survey-title">
+                  <h4>
+                    <b>교통카드 번호</b>를 입력해주세요
+                  </h4>
+                  <p>
+                    신용/체크카드 번호로는 조회가 어려워요 😢
+                  </p>
+                </div>
+                <div class="activity-form">
+                  <div class="input-form">
+                    <input type="text" placeholder="`-`를 제외한 카드번호 16자리 입력" />
+                  </div>
+                </div>
+              </section>
+              <section class="box">
+                <div class="survey-title">
+                  <h4>
+                    <b>거주하고 있는 지역</b>이 어디인가요?
+                  </h4>
+                  <p>
+                    주민등록상 주소를 선택해주세요.
+                  </p>
+                </div>
+                <div class="activity-form">
+                  <div class="selectbox-form">
+                    <div class="unit">
+                      <div class="arr"></div>
+                      <select name="adr-state">
+                        <option value="seoul">서울특별시</option>
+                        <option value="incheon">인천광역시</option>
+                        <option value="gyeonggi">경기도</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="selectbox-form city-area">
+                    <div class="unit">
+                      <div class="arr"></div>
+                      <select name="adr-city">
+                        <option value="suwon">수원시</option>
+                        <option value="yongin">용인시</option>
+                        <option value="gwangmyeong">광명시</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="box">
+                <div class="survey-title">
+                  <h4>
+                    <b>생년월일</b>을 입력해주세요
+                  </h4>
+                  <p>
+                    6자리 숫자를 입력해주세요. 예시) 901215
+                  </p>
+                </div>
+                <div class="activity-form">
+                  <div class="input-form">
+                    <input type="text" placeholder="생년월일 입력" />
+                  </div>
+                </div>
+              </section>
+              <section class="box">
+                <div class="survey-title">
+                  <h4>
+                    <b>해당하는 할인유형</b>이 있다면 선택해주세요
+                  </h4>
+                  <p>
+                    할인유형은 중복 선택이 가능하며 해당하는 유형이 없다면 선택하지 않아도 됩니다.
+                  </p>
+                </div>
+                <div class="activity-form">
+                  <div class="check-form">
+                    <input id="twc_bf" type="checkbox" />
+                    <label for="twc_bf">다자녀 2인</label>
+                  </div>
+                  <div class="check-form">
+                    <input id="thc_bf" type="checkbox" />
+                    <label for="thc_bf">다자녀 3인 이상</label>
+                  </div>
+                  <div class="outside">
+                    <div class="check-form">
+                      <input id="ic_ipf_bf" type="checkbox" />
+                      <label for="ic_ipf_bf">i+ 차비드림 첫째아</label>
+                    </div>
+                    <div class="check-form">
+                      <input id="ic_ips_bf" type="checkbox" />
+                      <label for="ic_ips_bf">i+ 차비드림 둘째아 이상</label>
+                    </div>
+                  </div>
+                  <div class="check-form">
+                    <input id="lpy_bf" type="checkbox" />
+                    <label for="lpy_bf">저소득층</label>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <button class="active-agree disabled" disabled>다음</button>
+          </div>
+        </section>
       </div>
-      <button class="next">다음</button>
     </section>
     <div class="popup-layer">
       <div class="popup-container">
@@ -72,6 +186,20 @@
     </div>
   </div>
   <script>
+    const boxes = document.querySelectorAll('.box');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('on');
+          }, index * 150);
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+    boxes.forEach(box => observer.observe(box));
 
     const popButtons = document.querySelectorAll('.line-text')
     for (const popButton of popButtons) {
@@ -85,17 +213,19 @@
       document.querySelector('.popup-layer').classList.remove('active');
     })
 
-    // 사용중인 교통카드 section
+    // 인트로에서 각 survey로 넘어가는 프로세스 처리
     document.querySelector('.page-layer .back-btn').addEventListener('click', function() {
-      history.back();
+      document.querySelector('.intro').classList.add('active');
+      document.querySelector('.survey-case01').classList.remove('active');
     });
-    document.querySelector('.page-layer .next').addEventListener('click', function() {
+    document.querySelector('.page-layer .tm-next').addEventListener('click', function() {
       const selectedType = document.querySelector('input[name="card"]:checked');
       const value = selectedType.value;
 
       if (value === 'tm') {
-        location.href=("./index-case01.html");
-        // 이용내역 자동조회 클릭 시 카드번호 입력 section으로 이동
+        document.querySelector('.survey-case01').classList.add('active');
+        document.querySelector('.intro').classList.remove('active');
+        // 다음버튼 클릭 시 case1로 이동
       } else {
         location.href=("./index-case02.html");
         // 직접입력 선택 시 case2로 이동
