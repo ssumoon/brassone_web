@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <link rel="stylesheet" href="../css/styles.css">
-  <script src="../js/app.js"></script>
+  <script src="./js/app.js"></script>
   <meta name="description" content="">
   <meta property="og:title" content="">
   <meta property="og:type" content="">
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-<header id="header">
+<header id="header" class="sub">
   <div class="container">
     <a href="../index.html" class="logo-wrap">
       <div class="logo-img">
@@ -41,7 +41,7 @@
         </div>
       </li>
       <li>
-        <a href="../history/chungju.html" class="main-item">HISTORY</a>
+        <a href="../history/chungju.html" class="main-item active">HISTORY</a>
         <div class="sub-item">
           <a href="../history/chungju.html">충주대학교</a>
           <a href="../history/cheongju.html">청주과학대학</a>
@@ -50,10 +50,10 @@
         </div>
       </li>
       <li>
-        <a href="../interview/birth.html" class="main-item">INTERVIEW</a>
+        <a href="../interview/president.html" class="main-item">INTERVIEW</a>
         <div class="sub-item">
-          <a href="../interview/birth.html">개교 120주년 기념</a>
           <a href="../interview/president.html">윤승조 총장 대담</a>
+          <a href="../interview/birth.html">개교 120주년 기념</a>
         </div>
       </li>
       <li>
@@ -70,101 +70,111 @@
     </ul>
   </div>
 </header>
-<section class="visual-area">
-  <div class="txt-box">
-    <p>120년, 길을 내고 미래를 잇다, 국립한국교통대학교</p>
-    <h1>Together, get better!</h1>
-    <span>Korea National University of Transportation</span>
-  </div>
-  <div class="bg-img">
-    <div class="cover">Korea National University of Transportation</div>
-    <img src="../img/bg-main.jpg" />
-  </div>
-</section>
-<section class="slider-area">
+<section class="rows-section">
   <div class="container">
-    <div class="slider-wrapper">
-      <h2 class="slider-title">
-        대한민국 교통과 역사를 함께해 온
-        <b>국립한국교통대학교의 어제와 오늘</b>
+    <div class="page-title">
+      <span>KNUT 120th ANNIVERSARY</span>
+      <h2>
+        비전을 현실로 만들고 도전을 혁신으로 삼아,<br />
+        <b>도약의 새 역사를 향해</b>
       </h2>
     </div>
-  </div>
-  <div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide">
-        <img src="../img/slider-img01.jpg" />
+    <div class="color-box">
+      <div class="title">
+        <h4>
+          국립한국교통대학교<br>
+          120주년을 기념하며
+        </h4>
+        <span>
+          국립한국교통대학교<br>
+          총장 윤승조
+        </span>
       </div>
-      <div class="swiper-slide">
-        <img src="../img/slider-img02.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/slider-img03.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/slider-img01.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/slider-img02.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="../img/slider-img03.jpg" />
+      <div class="contents">
+        <p>
+          국립한국교통대학교는 120년의 유구한 역사를 가진 국내 유일의 교통 특성화 대학으로서 진리탐구, 미래창조 및 인류봉사의 교육이념 아래 미래사회의 주역이 될 인재 육성을 통해 국가와 지역사회에 기여해 왔습니다. 우리 대학의 조직문화는 오랜 세월에 걸쳐 다져진 ‘실용성’과 ‘현장성’에 뿌리를 두고 있습니다. 이론과 실무를 겸비한, 내실을 추구하는 문화 속에서 학생과 동문들은 각자의 현장에서 인정받는 전문가로 성장하고 있습니다.
+        </p>
+        <p>
+          이제 우리 대학의 모든 구성원은 비전을 현실로 만들고 도전을 혁신으로 삼아, 장구하고 자랑스러운 120년 역사에 부끄럽지 않을 도약의 새 역사를 써 나가고자 합니다. 국립한국교통대학교 가족 여러분, 지역주민 여러분, 오늘의 우리 대학이 있기까지 헌신해주신 모든 분께 깊이 감사드립니다. 우리 모두 ‘One KNUT’라는 이름 아래 한마음으로 힘을 모아, 세계를 선도하는 자랑스러운 대학의 역사를 함께 만들어갑시다.
+        </p>
       </div>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-</section>
-<section class="quick-area">
-  <div class="quick-link">
-    <a class="insight">
-      <h4>knut insight</h4>
-      <p>바로가기</p>
-      <div class="cover"></div>
-      <img class="bg" src="../img/bg-quick01.jpg" />
-    </a>
-    <a class="interview">
-      <h4>special interview</h4>
-      <p>바로가기</p>
-      <div class="cover"></div>
-      <img class="bg" src="../img/bg-quick02.jpg" />
-    </a>
-    <a class="seasons">
-      <h4>seasons of knut</h4>
-      <p>바로가기</p>
-      <div class="cover"></div>
-      <img class="bg" src="../img/bg-quick03.jpg" />
-    </a>
+    <div class="sep-layout">
+      <div class="sep-block">
+        <div class="title">
+          <h4>
+            TOGETHER<br />
+            GET BETTER
+          </h4>
+        </div>
+        <div class="contents">
+          <p>
+            국립한국교통대학교는 120년의 길을 걸으며 국가와 지역사회의 발전을 함께 해왔습니다.<br />
+            세 개의 길이 만나 하나의 큰 길이 되었고, 오늘의 국립한국교통대학교는 그 길 위에서 새로운 도약의 미래를 열어가고 있습니다.
+          </p>
+          <div class="photo-box">
+            <div class="img-wrapper">
+              <div class="img"><img src="../img/high_01_01.jpg" alt="2025.06.04. 국립한국교통대학교 개교 120주년 기념식 기념사"/></div>
+              <div class="img"><img src="../img/high_01_02.jpg" alt="2025.06.04. 국립한국교통대학교 개교 120주년 기념식 대학헌장 낭독" /></div>
+              <div class="img"><img src="../img/high_01_03.jpg" alt="2025.06.04. 국립한국교통대학교 개교 120주년 기념식 음악회" /></div>
+            </div>
+            <span>2025.6.4. 개교 120주년 기념식</span>
+          </div>
+          <p>
+            개교 120주년을 맞아 국립한국교통대학교는 다양한 활동을 이어가며 120년의 의미를 되새기고 미래를 함께 그렸습니다.<br />
+            걸어온 길을 돌아보고 미래를 향한 새로운 출발을 다짐하는 시간을 가졌습니다.
+          </p>
+          <div class="photo-box">
+            <div class="img-wrapper">
+              <div class="img"><img src="../img/high_02_01.jpg" alt="2025.09.23. 국립한국교통대학교 개교 120주년 기념 국원대동제 초대가수 무대"/></div>
+              <div class="img"><img src="../img/high_02_02.jpg" alt="2025.09.23. 국립한국교통대학교 개교 120주년 기념 국원대동제" /></div>
+              <div class="img"><img src="../img/high_02_03.jpg" alt="2025.09.23. 국립한국교통대학교 개교 120주년 기념 국원대동제를 즐기는 학생들" /></div>
+            </div>
+            <span>2025.9.23. 개교 120주년 기념 국원대동제</span>
+          </div>
+          <p>
+            캠퍼스를 가득 채운 웃음과 열정 속에서<br />
+            우리는 결속을 다지고, 하나 된 마음을 나누었습니다.
+          </p>
+          <div class="photo-box">
+            <div class="img-wrapper">
+              <div class="img"><img src="../img/high_03_01.jpg" alt="2025.11.19. 국립한국교통대학교 국제 컨퍼런스 2025 로비"/></div>
+              <div class="img"><img src="../img/high_03_02.jpg" alt="2025.11.19. 국립한국교통대학교 국제 컨퍼런스 2025 발표 모습" /></div>
+              <div class="img"><img src="../img/high_03_03.jpg" alt="2025.11.19. 국립한국교통대학교 국제 컨퍼런스 2025" /></div>
+        </div>
+            <span>2025.11.19. 개교 120주년 기념 국제 컨퍼런스</span>
+          </div>
+          <p>
+            국제 컨퍼런스와 토크콘서트를 열어 지난 역사를 돌아보고 미래방향을 함께 고민하며 가능성을 확장했습니다.
+          </p>
+        </div>
+      </div>
+      <div class="sep-block">
+        <div class="title">
+          <h4>
+            MOVING<br />
+            FORWARD
+          </h4>
+        </div>
+        <div class="contents">
+          <p>
+            이제, 국립한국교통대학교는 또 하나의 출발선 앞에서<br />
+            120년의 전통을 딛고 변화와 혁신을 선도하는 글로컬대학으로 힘차게 나아갑니다.
+          </p>
+          <div class="photo-box">
+            <div class="img-wrapper">
+              <div class="img"><img src="../img/high_04_01.jpg" alt="국립한국교통대학 개교 120주년 앰블럼 깃발형 현수막"/></div>
+              <div class="img"><img src="../img/high_04_02.jpg" alt="국립한국교통대학 개교 120주년 앰블럼" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <footer>
-  <p>충청북도 충주시 대학로 50   TEL. 043-841-5114</p>
+  <p>충청북도 충주시 대학로 50&nbsp;&nbsp;&nbsp;&nbsp;TEL. 043-841-5114</p>
   <span>COPYRIGHT 2026 Korea National University of Transportation. ALL RIGHTS RESERVED.</span>
 </footer>
-<script>
-  const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    slidesPerView: 2.5,
-    spaceBetween: 40,
-
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
-</script>
 </body>
 </html>
