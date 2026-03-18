@@ -735,6 +735,7 @@ footer {
     }
     li {
         flex:1;
+        max-width:25%;
         .thumb {
             background: #e2e4e7;
             width:100%;
