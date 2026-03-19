@@ -991,6 +991,7 @@ footer {
                 margin:0;
             }
             p {
+                word-break: keep-all;
                 color:#8a1e04;
                 font-size:18px;
                 font-family: Pretendard, sans-serif;
@@ -1080,6 +1081,34 @@ footer {
             margin-top:60px;
             border-top:1px #e2e4e7 solid;
             padding-top:60px;
+        }
+    }
+    &.reverse {
+        margin-top:60px;
+        .sep-block {
+            flex-direction: row-reverse;
+        }
+        .title {}
+        .contents {
+            padding-left:0;
+            padding-right:80px;
+            h3 {
+                font-size:24px;
+                margin:0 0 8px;
+            }
+            span {
+                display: block;
+                margin-bottom:30px;
+                color:#888;
+                font-size:16px;
+            }
+            p {
+                font-size:16px;
+                text-align: justify;
+            }
+            p+p {
+                margin-top:15px;
+            }
         }
     }
 }
