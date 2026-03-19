@@ -162,6 +162,38 @@
             </div>
             <button class="active-agree disabled" disabled>다음</button>
           </div>
+          <div class="popup-agree">
+            <div class="popup-container">
+              <h4>
+                개인정보 수집 및 이용 동의 (필수)
+                <a class="close-btn">
+                  <span></span>
+                  <span></span>
+                </a>
+              </h4>
+              <div class="contents">
+                <p>대중교통 이용실적 분석 및 실적 기반 맞춤형 교통결제상품 추천을 위해 아래와 같이 귀하의 개인정보를 수집 및 이용합니다.</p>
+                <dl>
+                  <dt>수집 및 이용 목적</dt>
+                  <dd>교통비 절약 상품 추천 및 맞춤 분석 서비스 제공</dd>
+                  <dt>수집하는 항목</dt>
+                  <dd>
+                    <p>티머니 카드번호 : 서비스 이용 시 사용하는 결제용 카드번호(식별목적)</p>
+                    <p>교통 이용 내역 : 교통카드 거래정보(이용금액, 이용건수), 승/하차 정보(대중교통 수단, 노선명, 정거장명, 사용금액, 교통카드 선/후불 구분 등)</p>
+                    <p>추가 입력 정보 : 생년월일, 거주지역, 할인유형(맞춤 추천의 정확도 향상 목적)</p>
+                  </dd>
+                  <dt>보유 및 이용기간</dt>
+                  <dd>서비스 이용 목적 달성 시까지</dd>
+                </dl>
+                <p>위 개인정보 수집이용에 동의하지 않을 수 있으며, 동의하지 않는 경우 서비스 이용이 제한됩니다. </p>
+              </div>
+              <label class="check-texttype">
+                <input type="checkbox" required />
+                <span>개인정보 수집 및 이용에 동의합니다.</span>
+              </label>
+              <button class="next">다음</button>
+            </div>
+          </div>
         </section>
       </div>
     </section>
@@ -230,6 +262,16 @@
         location.href=("./index-case02.html");
         // 직접입력 선택 시 case2로 이동
       }
+    });
+    document.querySelector('.active-agree').addEventListener('click', function() {
+      document.querySelector('.popup-agree').classList.add('active');
+      // 클릭시 동의화면 활성화
+    });
+
+    //닫기 버튼을 눌렀을 때 모달팝업이 닫힘
+    document.querySelector('.popup-agree .close-btn').addEventListener('click', function () {
+      //'active' class 제거
+      document.querySelector('.popup-agree').classList.remove('active');
     });
   </script>
 </body>

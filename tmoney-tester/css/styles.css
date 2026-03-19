@@ -1265,9 +1265,10 @@ header span {
 .popup-agree.active {
     display: block;
 }
+/* 0319 수정 */
 .popup-agree .popup-container {
     top:auto;
-    bottom:0;
+    bottom:60px;
     left:0;
     right:0;
     max-width:100%;
