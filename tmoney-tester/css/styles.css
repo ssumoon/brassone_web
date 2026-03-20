@@ -1636,11 +1636,12 @@ footer .copyright {
 
 .page-layer {
     min-height:100vh;
+    position: relative;
+    top:0;
+    bottom:60px;
     background: #fafafa;
     overflow-y: scroll;
-    margin-bottom:60px;
     padding-bottom:30px;
-    position: relative;
     &::-webkit-scrollbar {
         display: none;
     }
