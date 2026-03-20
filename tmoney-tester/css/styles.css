@@ -1625,7 +1625,7 @@ footer .copyright {
 
 .box {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(20px);
     transition: 0.5s;
 }
 .box.on {
@@ -1770,8 +1770,7 @@ footer .copyright {
     }
 
     .survey-area {
-        padding-top:10px;
-        padding-bottom:30px;
+        padding-top:20px;
         section {
             padding:20px;
         }
