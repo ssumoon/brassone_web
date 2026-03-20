@@ -1681,7 +1681,7 @@ footer .copyright {
         }
     }
     .wrapper {
-        padding:0;
+        padding:0 0 40px;
     }
     .activity-area {
         margin-top:-20px;
@@ -1773,7 +1773,7 @@ footer .copyright {
         padding-top:10px;
         padding-bottom:30px;
         section {
-            padding:40px 20px;
+            padding:20px;
         }
         .survey-title {
             h4 {
