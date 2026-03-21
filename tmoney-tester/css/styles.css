@@ -145,7 +145,7 @@ section a.end {
 .activity-area .outside.display {
     display: flex;
 }
-
+/* 0320 수정 */
 .selectbox-form {
     display: flex;
     flex-direction: column;
@@ -180,6 +180,7 @@ section a.end {
     transition-duration: .3s;
     background:#fff;
 }
+/* // 0320 수정 */
 .selectbox-form .arr {
     display: flex;
     align-items: center;
@@ -1633,7 +1634,7 @@ footer .copyright {
     transform: translateY(0);
 }
 
-
+/* 0320 수정 */
 .page-layer {
     min-height:100svh;
     position: relative;
@@ -1794,7 +1795,7 @@ footer .copyright {
         }
     }
 }
-
+/* // 0320 수정 */
 
 /* 추가부분 종료 */
 

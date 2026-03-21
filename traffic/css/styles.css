@@ -1112,3 +1112,166 @@ footer {
         }
     }
 }
+.count-layout {
+    .count-block {
+        padding:80px 0;
+        border-bottom:1px #e2e4e7 solid;
+        .container {
+            display: flex;
+            align-items: flex-start;
+            height:auto;
+            position: relative;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            .icon {
+                width:48px;
+                height:48px;
+                margin-bottom:20px;
+                background: #111;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            p {
+                text-align: center;
+                font-family: Montserrat, sans-serif;
+                color:#333;
+                font-size:40px;
+                font-weight:800;
+                margin:0 0 5px;
+                span { padding-left:10px; display: inline-block; }
+            }
+            label {
+                text-align: center;
+                font-size:18px;
+                font-weight:700;
+            }
+            label+span {
+                margin-top:10px;
+            }
+            span {
+                display: block;
+                margin:3px 0;
+                text-align: center;
+                font-size:16px; color:#888; font-family: Pretendard, sans-serif;
+            }
+            .addict ul {
+                display: flex;
+                flex-direction: column;
+                gap:10px;
+                padding:0;
+                li {
+                    padding:0 40px;
+                    background: #8a1e04;
+                    color:#fff;
+                    font-size:14px;
+                    font-weight:400;
+                    font-family: Pretendard, sans-serif;
+                    height:36px;
+                    border-radius: 18px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        .title {
+            flex:1;
+            margin-right:50px;
+            position: sticky;
+            top:120px;
+            .item {
+                p {
+                    color:#8a1e04;
+                }
+                label {
+                    color:#8a1e04;
+                }
+            }
+        }
+        .contents {
+            flex:3;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            row-gap: 60px;
+            .item {
+                flex:1;
+                min-width:33%;
+            }
+        }
+        &+.sep-block {
+            margin-top:60px;
+            border-top:1px #e2e4e7 solid;
+            padding-top:60px;
+        }
+        &+.fill {
+            background: #8a1e04;
+            .item {
+                label,p,span { color:#fff; }
+            }
+        }
+        .sm-wrap {
+            gap:40px;
+        }
+        .sm-item {
+            display: flex;
+            align-items: center;
+            label {
+                margin-right:20px;
+                text-align: center;
+                font-size:16px;
+                font-weight:700;
+            }
+            p {
+                text-align: center;
+                font-family: Montserrat, sans-serif;
+                color:#333;
+                font-size:20px;
+                font-weight:800;
+                margin:0 0 5px;
+                span { padding-left:10px; font-weight:400; font-size:16px; display: inline-block; }
+            }
+        }
+        &:first-child {
+            padding-top:40px;
+        }
+        &:last-child {
+            border:0;
+            padding-bottom:0;
+        }
+    }
+    &.reverse {
+        margin-top:60px;
+        .sep-block {
+            flex-direction: row-reverse;
+        }
+        .title {}
+        .contents {
+            padding-left:0;
+            padding-right:80px;
+            h3 {
+                font-size:24px;
+                margin:0 0 8px;
+            }
+            span {
+                display: block;
+                margin-bottom:30px;
+                color:#888;
+                font-size:16px;
+            }
+            p {
+                font-size:16px;
+                text-align: justify;
+            }
+            p+p {
+                margin-top:15px;
+            }
+        }
+    }
+}
