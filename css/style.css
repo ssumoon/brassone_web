@@ -1984,6 +1984,11 @@ footer {
           text-align: justify;
           color:#333;
         }
+        .write {
+          text-align: right;
+          color:#111;
+          font-weight:600;
+        }
       }
       .title {
         position: sticky;
