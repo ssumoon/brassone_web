@@ -1960,3 +1960,41 @@ footer {
     }
   }
 }
+.para-layout {
+  .para-block {
+    border-bottom: 1px #e2e4e7 solid;
+    padding: 60px 0;
+    .container {
+      display: flex;
+      align-items: flex-start;
+      height: auto;
+      position: relative;
+      .contents {
+        padding-left:40px;
+        flex:3.5;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        p {
+          margin:0 0 10px;
+          font-size:18px;
+          line-height:1.7;
+          font-family: Pretendard, sans-serif;
+          font-weight:400;
+          text-align: justify;
+          color:#333;
+        }
+      }
+      .title {
+        position: sticky;
+        top: 100px;
+        flex: 1;
+        font-size: 24px;
+        margin: 0;
+        font-weight:800;
+        font-family: 'Pretendard', sans-serif;
+        word-break: keep-all;
+      }
+    }
+  }
+}
