@@ -1522,7 +1522,7 @@ footer {
       overflow: hidden;
     }
     span {
-      font-family: 'Montserrat',sans-serif;
+      font-family: 'Montserrat','Pretendard', sans-serif;
       font-size:14px;
       color:#999;
     }
@@ -1895,46 +1895,81 @@ footer {
       align-items: flex-start;
       height: auto;
       position: relative;
-      ul {
-        flex:1;
-        list-style-type: none;
-        padding:0;
-        display: flex;
-        flex-direction: column;
-        li {
-          display: flex;
-          align-items: flex-start;
-          padding:30px 0;
-          p {
-            margin:0 0 10px;
-            font-size:20px;
-            font-family: Pretendard, sans-serif;
-            font-weight:700;
-            color:#111;
-          }
-          .info {
-            display: flex;
-            gap:40px;
-            &.complex {
-              flex-direction: column;
-              gap:20px;
-            }
-            .row {
-              display: flex;
-              gap:20px;
-              label {
-                color:#333;
-                font-weight:500;
-              }
-              span {
-                color:#888;
-                font-weight:400;
-              }
-            }
+      .contents {
+        flex:3;
+        .img-wrapper {
+          max-width:1200px;
+          width:100%;
+          img {
+            width:100%;
           }
         }
-        li+li {
-          border-top:1px #e2e4e7 solid;
+
+        h4 {
+          font-size:20px;
+          line-height:1.5;
+        }
+
+        ul {
+          flex:1;
+          list-style-type: none;
+          padding:0;
+          display: flex;
+          flex-direction: column;
+          &.in-ico {
+            li {
+              align-items: center;
+              .ico {
+                width:40px;
+                margin-right:40px;
+              }
+              h5 {
+                font-size:18px;
+                margin:0 0 10px;
+              }
+              p {
+                font-size:16px;
+                font-weight:400;
+                color:#666;
+                margin:0;
+              }
+            }
+          }
+          li {
+            display: flex;
+            align-items: flex-start;
+            padding:30px 0;
+            p {
+              margin:0 0 10px;
+              font-size:20px;
+              font-family: Pretendard, sans-serif;
+              font-weight:700;
+              color:#111;
+            }
+            .info {
+              display: flex;
+              gap:40px;
+              &.complex {
+                flex-direction: column;
+                gap:20px;
+              }
+              .row {
+                display: flex;
+                gap:20px;
+                label {
+                  color:#333;
+                  font-weight:500;
+                }
+                span {
+                  color:#888;
+                  font-weight:400;
+                }
+              }
+            }
+          }
+          li+li {
+            border-top:1px #e2e4e7 solid;
+          }
         }
       }
       .sticky-unit {
