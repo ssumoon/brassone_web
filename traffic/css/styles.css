@@ -1307,7 +1307,9 @@ footer {
         .sep-block {
             flex-direction: row-reverse;
         }
-        .title {}
+        .photo {
+            border:1px #e2e4e7 solid;
+        }
         .contents {
             padding-left:0;
             padding-right:80px;
@@ -1354,6 +1356,11 @@ footer {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                img {
+                    width:100%;
+                    height:100%;
+                    object-fit: cover;
+                }
             }
             p {
                 text-align: center;

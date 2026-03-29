@@ -1897,6 +1897,9 @@ footer {
       position: relative;
       .contents {
         flex:3;
+        .photo {
+          border:1px #e2e4e7 solid;
+        }
         .img-wrapper {
           max-width:1200px;
           width:100%;
