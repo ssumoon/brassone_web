@@ -7,6 +7,8 @@
   <title></title>
   <link rel="stylesheet" href="../css/styles.css">
   <script src="./js/app.js"></script>
+  <script src="../js/common.js"></script>
+
   <meta name="description" content="">
   <meta property="og:title" content="">
   <meta property="og:type" content="">
@@ -41,12 +43,12 @@
         </div>
       </li>
       <li>
-        <a href="../history/chungju.html" class="main-item active">HISTORY</a>
+        <a href="../history/index.html?page=train" class="main-item active">HISTORY</a>
         <div class="sub-item">
-          <a href="../history/chungju.html">충주대학교</a>
-          <a href="../history/cheongju.html">청주과학대학</a>
-          <a href="../history/train.html">한국철도대학</a>
-          <a href="../history/traffic.html">국립한국교통대학교</a>
+          <a href="../history/index.html?page=chungju">충주대학교</a>
+          <a href="../history/index.html?page=cheongju">청주과학대학</a>
+          <a href="../history/index.html?page=train">한국철도대학</a>
+          <a href="../history/index.html?page=traffic">국립한국교통대학교</a>
         </div>
       </li>
       <li>
@@ -57,11 +59,11 @@
         </div>
       </li>
       <li>
-        <a href="../timeless/seasons.html" class="main-item">TIMELESS</a>
+        <a href="../timeless/index.html?page=seasons" class="main-item active">TIMELESS</a>
         <div class="sub-item">
-          <a href="../timeless/seasons.html">SEASONS OF KNUT</a>
-          <a href="../timeless/scenes.html">SCENES OF KNUT</a>
-          <a href="../timeless/spirit.html">SPIRIT OF KNUT</a>
+          <a href="../timeless/index.html?page=seasons" data-timeless-link="seasons">SEASONS OF KNUT</a>
+          <a href="../timeless/index.html?page=scenes" data-timeless-link="scenes">SCENES OF KNUT</a>
+          <a href="../timeless/index.html?page=spirit" data-timeless-link="spirit">SPIRIT OF KNUT</a>
         </div>
       </li>
       <li>
@@ -341,5 +343,90 @@
   <p>충청북도 충주시 대학로 50&nbsp;&nbsp;&nbsp;&nbsp;TEL. 043-841-5114</p>
   <span>COPYRIGHT 2026 Korea National University of Transportation. ALL RIGHTS RESERVED.</span>
 </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const countBlocks = document.querySelectorAll('.count-block');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const formatCountValue = (value, decimals) => {
+      return value.toLocaleString('ko-KR', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      });
+    };
+
+    const animateCount = (element, delay = 0) => {
+      if (!element || element.dataset.countAnimated === 'true') return;
+
+      const originalHTML = element.innerHTML.trim();
+      const match = originalHTML.match(/^\s*([\d,]+(?:\.\d+)?)/);
+      if (!match) return;
+
+      const rawValue = match[1];
+      const endValue = Number(rawValue.replace(/,/g, ''));
+      const decimals = rawValue.includes('.') ? rawValue.split('.')[1].length : 0;
+      const duration = decimals > 0 ? 1600 : 1400;
+
+      element.dataset.countAnimated = 'true';
+
+      if (prefersReducedMotion) {
+        element.innerHTML = originalHTML;
+        return;
+      }
+
+      const startAnimation = () => {
+        const startTime = performance.now();
+
+        const step = (currentTime) => {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const currentValue = endValue * eased;
+          const formattedValue = formatCountValue(currentValue, decimals);
+
+          element.innerHTML = originalHTML.replace(rawValue, formattedValue);
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            element.innerHTML = originalHTML.replace(rawValue, formatCountValue(endValue, decimals));
+          }
+        };
+
+        requestAnimationFrame(step);
+      };
+
+      if (delay > 0) {
+        setTimeout(startAnimation, delay);
+      } else {
+        startAnimation();
+      }
+    };
+
+    const runBlockAnimation = (block) => {
+      if (!block || block.dataset.blockAnimated === 'true') return;
+
+      block.dataset.blockAnimated = 'true';
+      const countTargets = block.querySelectorAll('p');
+
+      countTargets.forEach((target, index) => {
+        animateCount(target, index * 120);
+      });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        runBlockAnimation(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.35,
+    });
+
+    countBlocks.forEach((block) => {
+      observer.observe(block);
+    });
+  });
+</script>
 </body>
 </html>
