@@ -1918,7 +1918,7 @@ footer {
           flex-direction: column;
           &.in-ico {
             li {
-              align-items: center;
+              align-items: flex-start;
               .ico {
                 width:40px;
                 margin-right:40px;
@@ -1932,6 +1932,47 @@ footer {
                 font-weight:400;
                 color:#666;
                 margin:0;
+              }
+              .sep {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top:30px;
+                gap:40px;
+                .rows {
+                  flex:1;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  h5 {
+                    font-size:14px;
+                    height:38px;
+                    padding:0 20px;
+                    border-radius: 20px;
+                    display: flex;
+                    background: #111;
+                    color:#fff;
+                    align-items: center;
+                    justify-content: center;
+                  }
+                }
+              }
+              .details-wrapper {
+                display: flex;
+                align-items: flex-start;
+                margin:15px 0;
+                label {
+                  white-space: nowrap;
+                  font-weight:700;
+                  font-size:14px;
+                  margin:5px 40px 5px 0;
+                }
+                span {
+                  display: block;
+                  font-size:16px;
+                  color:#666;
+                  font-weight:400;
+                  margin:5px 0;
+                }
               }
             }
           }

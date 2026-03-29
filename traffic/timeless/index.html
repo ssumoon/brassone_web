@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>디지털역사관 | TIMELESS</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="./js/app.js"></script>
+  <script src="../js/common.js"></script>
+
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+  <style>
+      #timeless-photo-list .timeless-reveal-item {
+          --reveal-delay: 0ms;
+          opacity: 0;
+          transform: translate3d(0, 48px, 0);
+          transition:
+                  opacity 0.7s ease,
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+          transition-delay: var(--reveal-delay, 0ms);
+          will-change: opacity, transform;
+      }
+
+      #timeless-photo-list .timeless-reveal-item.is-visible {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+          #timeless-photo-list .timeless-reveal-item {
+              opacity: 1;
+              transform: none;
+              transition: none;
+          }
+      }
+
+      .image-popup-dialog {
+          position: relative;
+      }
+
+      .image-popup-nav {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 56px;
+          height: 56px;
+          border: 0;
+          border-radius: 50%;
+          background: rgba(0, 0, 0, 0.45);
+          cursor: pointer;
+          z-index: 2;
+      }
+
+      .image-popup-prev {
+          left: 24px;
+      }
+
+      .image-popup-next {
+          right: 24px;
+      }
+
+      .image-popup-nav::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 14px;
+          height: 14px;
+          border-top: 2px solid #fff;
+          border-right: 2px solid #fff;
+      }
+
+      .image-popup-prev::before {
+          transform: translate(-35%, -50%) rotate(-135deg);
+      }
+
+      .image-popup-next::before {
+          transform: translate(-65%, -50%) rotate(45deg);
+      }
+
+      .image-popup-nav.is-disabled {
+          opacity: 0.35;
+          pointer-events: none;
+      }
+
+      .image-popup-target {
+          --popup-shift-x: 0px;
+          --popup-scale: 1;
+          display: block;
+          opacity: 1;
+          transform: translate3d(var(--popup-shift-x), 0, 0) scale(var(--popup-scale));
+          transition:
+              transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.34s ease;
+          will-change: transform, opacity;
+      }
+
+      @media (max-width: 767px) {
+          .image-popup-nav {
+              width: 44px;
+              height: 44px;
+          }
+
+          .image-popup-prev {
+              left: 12px;
+          }
+
+          .image-popup-next {
+              right: 12px;
+          }
+      }
+  </style>
+</head>
+<body>
+<header id="header" class="sub">
+  <div class="container">
+    <a href="../index.html" class="logo-wrap">
+      <div class="logo-img">
+        <img class="color" src="../img/logo-color.png" />
+        <img class="white" src="../img/logo-white.png" />
+      </div>
+      <span>디지털역사관</span>
+    </a>
+    <ul class="gnb">
+      <li>
+        <a href="../highlight/120th.html" class="main-item">HIGHLIGHT</a>
+        <div class="sub-item">
+          <a href="../highlight/120th.html">120TH ANNIVERSARY</a>
+          <a href="../highlight/insight.html">KNUT INSIGHT</a>
+        </div>
+      </li>
+      <li>
+        <a href="../history/index.html?page=train" class="main-item">HISTORY</a>
+        <div class="sub-item">
+          <a href="../history/index.html?page=chungju">충주대학교</a>
+          <a href="../history/index.html?page=cheongju">청주과학대학</a>
+          <a href="../history/index.html?page=train">한국철도대학</a>
+          <a href="../history/index.html?page=traffic">국립한국교통대학교</a>
+        </div>
+      </li>
+      <li>
+        <a href="../interview/president.html" class="main-item">INTERVIEW</a>
+        <div class="sub-item">
+          <a href="../interview/president.html">윤승조 총장 대담</a>
+          <a href="../interview/birth.html">축하의 말</a>
+        </div>
+      </li>
+      <li>
+        <a href="./index.html?page=seasons" class="main-item active">TIMELESS</a>
+        <div class="sub-item">
+          <a href="./index.html?page=seasons" data-timeless-link="seasons">SEASONS OF KNUT</a>
+          <a href="../timeless/index.html?page=scenes" data-timeless-link="scenes">SCENES OF KNUT</a>
+          <a href="../timeless/index.html?page=spirit" data-timeless-link="spirit">SPIRIT OF KNUT</a>
+        </div>
+      </li>
+      <li>
+        <a target="_blank" href="../ebook/index.html" class="main-item">E-BOOK</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<section class="rows-section">
+  <div class="container">
+    <div class="page-title" id="timeless-page-title"></div>
+    <div class="contents-list photo">
+      <ul id="timeless-photo-list"></ul>
+    </div>
+  </div>
+</section>
+<div class="image-popup" aria-hidden="true">
+  <div class="image-popup-dim"></div>
+  <div class="image-popup-dialog" role="dialog" aria-modal="true" aria-label="이미지 크게 보기">
+    <button type="button" class="image-popup-close" aria-label="팝업 닫기"></button>
+    <button type="button" class="image-popup-nav image-popup-prev" aria-label="이전 이미지"></button>
+    <button type="button" class="image-popup-nav image-popup-next" aria-label="다음 이미지"></button>
+    <div class="image-popup-view">
+      <img class="image-popup-target" src="" alt="확대 이미지" />
+    </div>
+  </div>
+</div>
+<footer>
+  <p>충청북도 충주시 대학로 50   TEL. 043-841-5114</p>
+  <span>COPYRIGHT 2026 Korea National University of Transportation. ALL RIGHTS RESERVED.</span>
+</footer>
+<script src="../js/timeless.js"></script>
+
+<script>
+
+  const titleRoot = document.querySelector('#timeless-page-title');
+  const listRoot = document.querySelector('#timeless-photo-list');
+  const pageLinks = document.querySelectorAll('[data-timeless-link]');
+  const imagePopup = document.querySelector('.image-popup');
+  const imagePopupDim = document.querySelector('.image-popup-dim');
+  const imagePopupClose = document.querySelector('.image-popup-close');
+  const imagePopupPrev = document.querySelector('.image-popup-prev');
+  const imagePopupNext = document.querySelector('.image-popup-next');
+  const imagePopupTarget = document.querySelector('.image-popup-target');
+  const imagePopupView = document.querySelector('.image-popup-view');
+
+  let currentTimelessItems = [];
+  let currentImageIndex = -1;
+
+  let timelessRevealObserver = null;
+  let imagePopupScale = 1;
+  let imageSwitchTimer = null;
+
+
+  const getCurrentPageKey = () => {
+    const searchParams = new URLSearchParams(window.location.search);
+    return searchParams.get('page') || 'seasons';
+  };
+
+  const createPhotoItemHTML = (item, index) => {
+    const periodHTML = item.date ? `<span>${item.date}</span>` : '';
+    const fullSrcAttribute = item.fullImage ? `data-full-src="${item.fullImage}"` : '';
+
+    return `
+      <li class="timeless-reveal-item" data-reveal-index="${index}">
+    <a class="item" data-item-index="${index}">
+      <div class="thumb">
+        <img src="${item.image || '#'}" ${fullSrcAttribute} alt="${item.title}">
+      </div>
+      <p>${item.title}</p>
+      ${periodHTML}
+    </a>
+  </li>
+    `;
+  };
+
+  const updateActiveMenu = (pageKey) => {
+    pageLinks.forEach((link) => {
+      const isActive = link.dataset.timelessLink === pageKey;
+      link.classList.toggle('active', isActive);
+    });
+  };
+
+  const renderTimelessPage = (pageKey) => {
+    const pageData = window.TIMELESS_PAGE_DATA[pageKey] || window.TIMELESS_PAGE_DATA.seasons;
+    currentTimelessItems = pageData.items || [];
+
+    if (titleRoot) {
+      titleRoot.innerHTML = `
+        <span>${pageData.pageTitle}</span>
+        <h2>${pageData.headingHtml}</h2>
+      `;
+    }
+
+    if (listRoot) {
+      listRoot.innerHTML = pageData.items.map((item, index) => createPhotoItemHTML(item, index)).join('');
+    }
+    document.title = `디지털역사관 | ${pageData.pageTitle}`;
+    setupTimelessReveal();
+    updateActiveMenu(pageKey in TIMELESS_PAGE_DATA ? pageKey : 'seasons');
+  };
+
+  const setupTimelessReveal = () => {
+    const revealItems = document.querySelectorAll('#timeless-photo-list .timeless-reveal-item');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (timelessRevealObserver) {
+      timelessRevealObserver.disconnect();
+      timelessRevealObserver = null;
+    }
+
+    revealItems.forEach((item, index) => {
+      item.classList.remove('is-visible');
+      item.style.setProperty('--reveal-delay', `${(index % 4) * 90}ms`);
+    });
+
+    if (prefersReducedMotion) {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+      return;
+    }
+
+    timelessRevealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        timelessRevealObserver.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.30,
+      rootMargin: '0px 0px -8% 0px'
+    });
+
+    revealItems.forEach((item) => {
+      timelessRevealObserver.observe(item);
+    });
+  };
+
+  const updateImagePopupNav = () => {
+    const hasItems = currentTimelessItems.length > 0;
+    const canGoPrev = hasItems && currentImageIndex > 0;
+    const canGoNext = hasItems && currentImageIndex < currentTimelessItems.length - 1;
+
+    if (imagePopupPrev) {
+      imagePopupPrev.classList.toggle('is-disabled', !canGoPrev);
+    }
+
+    if (imagePopupNext) {
+      imagePopupNext.classList.toggle('is-disabled', !canGoNext);
+    }
+  };
+
+  const openImagePopupByIndex = (index) => {
+    const item = currentTimelessItems[index];
+    if (!item) return;
+
+    const popupSrc = item.fullImage || item.image || '';
+    if (!popupSrc || popupSrc === '#') return;
+
+    const previousIndex = currentImageIndex;
+    const direction = previousIndex === -1 ? null : index > previousIndex ? 'next' : 'prev';
+
+    currentImageIndex = index;
+    openImagePopup(popupSrc, item.title || '확대 이미지', direction);
+    updateImagePopupNav();
+  };
+
+  const clampImagePopupScale = (value) => Math.min(3, Math.max(1, Number(value.toFixed(2))));
+
+  const updateImagePopupScale = () => {
+    if (!imagePopupTarget) return;
+    imagePopupTarget.style.setProperty('--popup-scale', imagePopupScale);
+  };
+
+  const resetPopupImageMotion = () => {
+    if (!imagePopupTarget) return;
+
+    if (imageSwitchTimer) {
+      window.clearTimeout(imageSwitchTimer);
+      imageSwitchTimer = null;
+    }
+
+    imagePopupTarget.style.transition = '';
+    imagePopupTarget.style.setProperty('--popup-shift-x', '0px');
+    imagePopupTarget.style.opacity = '1';
+    updateImagePopupScale();
+  };
+
+  const animatePopupImageChange = (src, alt, direction) => {
+    if (!imagePopupTarget) return;
+
+    const outShift = direction === 'prev' ? '48px' : '-48px';
+    const inShift = direction === 'prev' ? '-48px' : '48px';
+
+    resetPopupImageMotion();
+    imagePopupTarget.style.setProperty('--popup-shift-x', outShift);
+    imagePopupTarget.style.opacity = '0';
+
+    imageSwitchTimer = window.setTimeout(() => {
+      imagePopupTarget.style.transition = 'none';
+      imagePopupTarget.src = src;
+      imagePopupTarget.alt = alt || '확대 이미지';
+      imagePopupTarget.style.setProperty('--popup-shift-x', inShift);
+      imagePopupTarget.style.opacity = '0';
+      updateImagePopupScale();
+
+      void imagePopupTarget.offsetWidth;
+      imagePopupTarget.style.transition = '';
+
+      requestAnimationFrame(() => {
+        imagePopupTarget.style.setProperty('--popup-shift-x', '0px');
+        imagePopupTarget.style.opacity = '1';
+      });
+
+      imageSwitchTimer = null;
+    }, 170);
+  };
+
+  const openImagePopup = (src, alt, direction = null) => {
+    if (!imagePopup || !imagePopupTarget || !src || src === '#') return;
+
+    const isAlreadyOpen = imagePopup.classList.contains('active');
+
+    imagePopupScale = 1;
+    imagePopup.classList.add('active');
+    imagePopup.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('popup-open');
+
+    if (imagePopupView) {
+      imagePopupView.scrollTop = 0;
+      imagePopupView.scrollLeft = 0;
+    }
+
+    if (isAlreadyOpen && direction && imagePopupTarget.src) {
+      animatePopupImageChange(src, alt, direction);
+    } else {
+      resetPopupImageMotion();
+      imagePopupTarget.src = src;
+      imagePopupTarget.alt = alt || '확대 이미지';
+    }
+
+    updateImagePopupScale();
+    updateImagePopupNav();
+  };
+
+  const closeImagePopup = () => {
+    if (!imagePopup || !imagePopupTarget) return;
+    imagePopup.classList.remove('active');
+    imagePopup.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('popup-open');
+    resetPopupImageMotion();
+    imagePopupTarget.src = '';
+    imagePopupTarget.alt = '확대 이미지';
+    imagePopupScale = 1;
+    currentImageIndex = -1;
+    updateImagePopupNav();
+    updateImagePopupScale();
+  };
+
+  const changeImagePopupScale = (delta) => {
+    imagePopupScale = clampImagePopupScale(imagePopupScale + delta);
+    updateImagePopupScale();
+  };
+
+  renderTimelessPage(getCurrentPageKey());
+
+  if (listRoot && imagePopup && imagePopupTarget) {
+    listRoot.addEventListener('click', (e) => {
+      const clickedItem = e.target.closest('.item');
+      if (!clickedItem) return;
+
+      const itemIndex = Number(clickedItem.dataset.itemIndex);
+      if (Number.isNaN(itemIndex)) return;
+      openImagePopupByIndex(itemIndex);
+    });
+  }
+
+  if (imagePopupDim) {
+    imagePopupDim.addEventListener('click', closeImagePopup);
+  }
+
+  if (imagePopupClose) {
+    imagePopupClose.addEventListener('click', closeImagePopup);
+  }
+  if (imagePopupPrev) {
+    imagePopupPrev.addEventListener('click', () => {
+      if (currentImageIndex <= 0) return;
+      openImagePopupByIndex(currentImageIndex - 1);
+    });
+  }
+
+  if (imagePopupNext) {
+    imagePopupNext.addEventListener('click', () => {
+      if (currentImageIndex >= currentTimelessItems.length - 1) return;
+      openImagePopupByIndex(currentImageIndex + 1);
+    });
+  }
+
+  if (imagePopupView) {
+    imagePopupView.addEventListener('wheel', (e) => {
+      if (!imagePopup.classList.contains('active')) return;
+      e.preventDefault();
+      changeImagePopupScale(e.deltaY < 0 ? 0.15 : -0.15);
+    }, { passive: false });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (!imagePopup.classList.contains('active')) return;
+
+    if (e.key === 'Escape') {
+      closeImagePopup();
+      return;
+    }
+
+    if (e.key === 'ArrowLeft' && currentImageIndex > 0) {
+      openImagePopupByIndex(currentImageIndex - 1);
+      return;
+    }
+
+    if (e.key === 'ArrowRight' && currentImageIndex < currentTimelessItems.length - 1) {
+      openImagePopupByIndex(currentImageIndex + 1);
+      return;
+    }
+
+    if (e.key === '+' || e.key === '=') changeImagePopupScale(0.25);
+    if (e.key === '-') changeImagePopupScale(-0.25);
+    if (e.key === '0') {
+      imagePopupScale = 1;
+      updateImagePopupScale();
+    }
+  });
+</script>
+</body>
+</html>
