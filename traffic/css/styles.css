@@ -1005,7 +1005,7 @@ footer {
     background: rgba(0,0,0,0.5);
     display: none;
     z-index: 10;
-
+    overflow-y:auto;
 }
 .popup-layer.active {
     display: block;
@@ -1018,6 +1018,7 @@ footer {
     margin:0 auto;
     min-height:100vh;
     position: relative;
+
     .close {
         position: absolute;
         display: flex;

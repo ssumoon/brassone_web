@@ -151,19 +151,23 @@
   const popupTitle = document.querySelector('#history-popup-title');
   const popupPeriod = document.querySelector('#history-popup-period');
   const popupContainer = document.querySelector('#history-popup-container');
+  const popupHead = popupLayer ? popupLayer.querySelector('.popup-head') : null;
+
   let historyRevealObserver = null;
 
   const createItemHTML = (item, index) => {
+    const thumbStyle = item.image
+      ? ` style="background-image: url('${item.image}'); background-position: center; background-size: cover; background-repeat: no-repeat; aspect-ratio: 16 / 10;"`
+      : ' style="background-color: #e9e9e9; aspect-ratio: 16 / 10;"';
+
     return `
       <li class="history-reveal-item" data-reveal-index="${index}">
-    <a class="item" data-item-index="${index}">
-      <div class="thumb">
-        <img src="${item.image}" alt="${item.title}">
-      </div>
-      <p>${item.title}</p>
-      <span>${item.period}</span>
-    </a>
-  </li>
+        <a class="item" data-item-index="${index}">
+          <div class="thumb"${thumbStyle} role="img" aria-label="${item.title}"></div>
+          <p>${item.title}</p>
+          <span>${item.period}</span>
+        </a>
+      </li>
     `;
   };
   const setupHistoryReveal = () => {
@@ -223,14 +227,32 @@
       </div>
     `;
   };
-
   const renderPopup = (item) => {
-    if (!popupLabel || !popupTitle || !popupPeriod || !popupContainer) return;
-    popupLabel.textContent = item.chapter;
-    popupTitle.textContent = item.popupTitle || item.title;
-    popupPeriod.textContent = item.popupPeriod || item.period;
-    popupContainer.innerHTML = (item.popupBoxes || []).map(createPopupBoxHTML).join('');
+    if (!popupLabel || !popupTitle || !popupPeriod || !popupContainer || !item) return;
+
+    const popupBoxes = Array.isArray(item.popupBoxes) ? item.popupBoxes : [];
+
+    popupLabel.textContent = item.chapter || '';
+    popupTitle.textContent = item.popupTitle || item.title || '';
+    popupPeriod.textContent = item.popupPeriod || item.period || '';
+    popupContainer.innerHTML = popupBoxes.map(createPopupBoxHTML).join('');
+
+
+    if (popupHead) {
+      if (item.popupBack) {
+        popupHead.style.backgroundImage = `url('${item.popupBack}')`;
+        popupHead.style.backgroundPosition = 'center';
+        popupHead.style.backgroundSize = 'cover';
+        popupHead.style.backgroundRepeat = 'no-repeat';
+      } else {
+        popupHead.style.backgroundImage = 'none';
+        popupHead.style.backgroundPosition = '';
+        popupHead.style.backgroundSize = '';
+        popupHead.style.backgroundRepeat = '';
+      }
+    }
   };
+
 
   const openPopup = () => {
     if (!popupLayer) return;
@@ -260,8 +282,13 @@
   };
 
   const renderHistoryPage = (pageKey) => {
-    const pageData = window.HISTORY_PAGE_DATA[pageKey] || window.HISTORY_PAGE_DATA.train;
-    if (!pageTitleRoot || !itemListRoot) return;
+    const historyData = window.HISTORY_PAGE_DATA || {};
+    const pageData = historyData[pageKey] || historyData.train;
+
+    if (!pageData || !pageTitleRoot || !itemListRoot) {
+      console.error('HISTORY_PAGE_DATA is missing or invalid.', { pageKey, historyData });
+      return;
+    }
 
     pageTitleRoot.innerHTML = `
       <span>${pageData.eyebrow}</span>
@@ -269,9 +296,15 @@
     `;
     pageTitleRoot.classList.remove('is-visible');
 
-    itemListRoot.innerHTML = pageData.items.map(createItemHTML).join('');
+    itemListRoot.innerHTML = (pageData.items || []).map(createItemHTML).join('');
     setupHistoryReveal();
-    renderPopup(pageData.items[0]);
+
+    if (pageData.items && pageData.items[0]) {
+      renderPopup(pageData.items[0]);
+    } else {
+      popupContainer.innerHTML = '';
+    }
+
     bindPopupEvents(pageData);
   };
 
