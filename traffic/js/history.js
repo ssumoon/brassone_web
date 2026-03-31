@@ -21,8 +21,8 @@ window.HISTORY_PAGE_DATA = {
         chapter: 'chapter. 01',
         title: '역사의 수난을 딛고 민족과 함께한 백의의 천사',
         period: '1910 ~ 1961',
-        image: '../img/bg-main.jpg',
-        popupBack: "../img/bg-main.jpg",
+        image: '../img/item-history04.jpg',
+        popupBack: "../img/item-history04-bg.jpg",
         popupTitle: '역사의 수난을 딛고 민족과 함께한 백의의 천사',
         popupPeriod: '1910 ~ 1961',
         popupBoxes: [
@@ -47,9 +47,9 @@ window.HISTORY_PAGE_DATA = {
         chapter: 'chapter. 02',
         title: '고등교육기관으로 발돋움하다',
         period: '1962 ~ 1997',
-        image: "../img/bg-main.jpg",
+        image: "../img/item-history05.jpg",
         popupTitle: '고등교육기관으로 발돋움하다',
-        popupBack: "../img/bg-main.jpg",
+        popupBack: "../img/item-history05-bg.jpg",
         popupPeriod: '1962 ~ 1997',
         popupBoxes: [
           {
@@ -83,8 +83,8 @@ window.HISTORY_PAGE_DATA = {
         chapter: 'chapter. 03',
         title: '21세기 미래 과학 인재 배출을 위한 도전과 혁신',
         period: '1998 ~ 2002',
-        image: "../img/bg-main.jpg",
-        popupBack: "../img/bg-main.jpg",
+        image: "../img/item-history06.jpg",
+        popupBack: "../img/item-history06-bg.jpg",
         popupTitle: '21세기 미래 과학 인재 배출을 위한 도전과 혁신',
         popupPeriod: '1998 ~ 2002',
         popupBoxes: [
@@ -114,8 +114,8 @@ window.HISTORY_PAGE_DATA = {
         chapter: 'chapter. 04',
         title: '더 큰 내일을 위한 선택, 충주대학교와 청주과학대학 통합',
         period: '2003 ~ 2025',
-        image: "../img/bg-main.jpg",
-        popupBack: "../img/bg-main.jpg",
+        image: "../img/item-history07.jpg",
+        popupBack: "../img/item-history07-bg.jpg",
         popupTitle: '더 큰 내일을 위한 선택, 충주대학교와 청주과학대학 통합',
         popupPeriod: '2003 ~ 2025',
         popupBoxes: [
@@ -157,8 +157,8 @@ window.HISTORY_PAGE_DATA = {
         chapter: 'chapter. 01',
         title: '공업입국(工業立國)을 위한 공업기술 요원 양성',
         period: '1962 ~ 1973',
-        image: "../img/bg-main.jpg",
-        popupBack: "../img/bg-main.jpg",
+        image: "../img/item-history01.jpg",
+        popupBack: "../img/item-history01-bg.jpg",
         popupTitle: '공업입국(工業立國)을 위한 공업기술 요원 양성',
         popupPeriod: '1962 ~ 1973',
         popupBoxes: [
@@ -193,8 +193,8 @@ window.HISTORY_PAGE_DATA = {
         chapter: 'chapter. 02',
         title: '선진 공업에 기여할 전문적 지식과 공업기술 연마',
         period: '1974 ~ 2002',
-        image: "../img/bg-main.jpg",
-        popupBack: "../img/bg-main.jpg",
+        image: "../img/item-history02.jpg",
+        popupBack: "../img/item-history02-bg.jpg",
         popupTitle: '선진 공업에 기여할 전문적 지식과 공업기술 연마',
         popupPeriod: '1974 ~ 2002',
         popupBoxes: [
@@ -254,8 +254,8 @@ window.HISTORY_PAGE_DATA = {
         chapter: 'chapter. 03',
         title: '지역을 넘어 국가를 위한 대계(大計)',
         period: '2003 ~ 2025',
-        image: "../img/bg-main.jpg",
-        popupBack: "../img/bg-main.jpg",
+        image: "../img/item-history03.jpg",
+        popupBack: "../img/item-history03-bg.jpg",
         popupTitle: '지역을 넘어 국가를 위한 대계(大計)',
         popupPeriod: '2003 ~ 2025',
         popupBoxes: [
