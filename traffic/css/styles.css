@@ -855,7 +855,7 @@ section {
 }
 
 footer {
-    padding:30px 0;
+    padding:80px 0 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1499,6 +1499,119 @@ footer {
             p+p {
                 margin-top:15px;
             }
+        }
+    }
+}
+
+
+@media (max-width: 1480px) {
+    header .container,
+    .container {
+        margin:0 40px;
+        width:auto;
+        padding:0;
+    }
+
+}
+
+@media (max-width:1024px) {
+    header {
+        .gnb {
+            display: none;
+        }
+    }
+    header:hover, header:focus, header:focus-within {
+        background: none;
+        height:auto;
+        & .logo-wrap {
+            span {
+                color:#fff;
+            }
+            & .logo-img {
+                .color {
+                    opacity: 0;
+                }
+                .white {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .visual-area {
+        & .txt-box {
+            p {
+                font-size:16px;
+            }
+            h1 {
+                font-size:60px;
+            }
+            span {
+                font-size:14px;
+                letter-spacing: 0.3em;
+            }
+        }
+    }
+    .quick-area {
+        & .quick-link {
+            & a {
+                align-items: center;
+                h4 {
+                    text-align: center;
+                    font-size:24px;
+                    margin-right:0;
+                }
+                p {
+                    margin:0;
+                    font-size:16px;
+                }
+            }
+        }
+    }
+}
+@media (max-width:768px) {}
+@media (max-width:450px) {
+    header .container, .container {
+        margin: 0 30px;
+        width: auto;
+        padding: 0;
+    }
+    header {
+        padding-top:10px;
+        & .logo-wrap {
+            .logo-img {
+                height:30px;
+            }
+            span {
+                font-size:12px;
+                padding-bottom:6px;
+            }
+        }
+    }
+    .visual-area {
+        & .txt-box {
+            p {
+                font-size:14px;
+                line-height:1.5;
+                letter-spacing: 0.1em;
+                word-break: keep-all;
+            }
+            h1 {
+                font-size:40px;
+            }
+            span {
+                font-size:12px;
+                letter-spacing: 0.1em;
+            }
+        }
+    }
+    .quick-area {
+        .quick-link {
+            flex-direction: column;
+        }
+    }
+    footer {
+        span {
+        text-align: center;
         }
     }
 }
