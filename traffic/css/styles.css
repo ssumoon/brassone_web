@@ -476,7 +476,7 @@ header:hover,
 header:focus,
 header:focus-within {
     background: #fafafa;
-    height:240px;
+    height:280px;
     transition-duration: .3s;
     .container {
         align-items: flex-start;
