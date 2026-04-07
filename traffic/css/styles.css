@@ -1514,13 +1514,11 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: rgba(0,0,0,0.5);
-    border-radius: 50%;
     gap:4px;
     span {
-        width:16px;
-        height:1px;
-        background: #fff;
+        width:18px;
+        height:2px;
+        background: #111;
         display: block;
     }
 }
@@ -1575,6 +1573,7 @@ footer {
         }
         .gnb-wrapper {
             transform: translateX(340px);
+            z-index: 100;
             overflow-y: scroll;
             background: #fff;
             position: fixed;
@@ -1983,6 +1982,8 @@ footer {
     }
 }
 @media (max-width:768px) {
+    .mobile-menu-btn {
+    }
     header:hover, header:focus, header:focus-within {
         background: none;
         height:auto;
@@ -2609,5 +2610,13 @@ footer {
             word-break: keep-all;
             br {display: none;}
         }
+    }
+    .mobile-menu-btn {
+        top:8px;
+        right:20px;
+        gap:4px;
+    }
+    .mobile-menu-close-btn {
+
     }
 }
