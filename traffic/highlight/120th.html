@@ -87,7 +87,18 @@
       </div>
       <span>디지털역사관</span>
     </a>
+    <a class="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
     <div class="gnb-wrapper">
+      <div class="mobile-menu-close-btn-wrapper">
+        <a class="mobile-menu-close-btn">
+          <span></span>
+          <span></span>
+        </a>
+      </div>
       <ul class="gnb">
         <li>
           <a href="../highlight/120th.html" class="main-item">HIGHLIGHT</a>
@@ -315,5 +326,17 @@
       activeObserver.observe(block);
     });
   });
+
+  const menuButtons = document.querySelectorAll('.mobile-menu-btn')
+  for (const menuButton of menuButtons) {
+    menuButton.addEventListener('click', function () {
+      document.querySelector('.gnb-wrapper').classList.add('active');
+    });
+  }
+  //닫기 버튼을 눌렀을 때 모달팝업이 닫힘
+  document.querySelector('.gnb-wrapper .mobile-menu-close-btn').addEventListener('click', function () {
+    //'active' class 제거
+    document.querySelector('.gnb-wrapper').classList.remove('active');
+  })
 </script>
 </html>

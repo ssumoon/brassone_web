@@ -269,6 +269,7 @@ body.popup-open {
     height:100vh;
     background:#000;
     padding:0;
+    overflow-x: hidden;
     --visual-parallax-x: 0px;
     --visual-parallax-y: 0px;
     .txt-box {
@@ -289,7 +290,6 @@ body.popup-open {
         z-index: 1;
         width: 100%;
         height: 100%;
-        transform: scale(1.2);
         overflow: hidden;
         .cover {
             position: absolute;
@@ -1504,6 +1504,54 @@ footer {
     }
 }
 
+.mobile-menu-btn {
+    position: absolute;
+    right:30px;
+    top:15px;
+    width:42px;
+    height:42px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    gap:4px;
+    span {
+        width:16px;
+        height:1px;
+        background: #fff;
+        display: block;
+    }
+}
+.mobile-menu-close-btn-wrapper {
+    margin:15px 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+.mobile-menu-close-btn {
+    width:42px;
+    height:42px;
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #111;
+    border-radius: 50%;
+    span {
+        width:18px;
+        height:1px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        transform: rotate(45deg);
+    }
+    span:last-child {
+        transform: rotate(-45deg);
+    }
+}
+
 
 @media (max-width: 1480px) {
     header .container,
@@ -1517,7 +1565,16 @@ footer {
 
 @media (max-width:1024px) {
     header {
+        overflow: visible;
+        .mobile-menu-btn {
+            display: flex;
+            cursor: pointer;
+        }
+        .gnb-wrapper.active {
+            transform: translateX(0);
+        }
         .gnb-wrapper {
+            transform: translateX(340px);
             overflow-y: scroll;
             background: #fff;
             position: fixed;
@@ -1526,6 +1583,20 @@ footer {
             bottom:0;
             max-width:340px;
             width:100%;
+        }
+        & .logo-wrap {
+            span {
+                font-size:12px;
+                padding-bottom:6px;
+            }
+            height:28px !important;
+            & .logo-img {
+                height:28px !important;
+            }
+        }
+        .gnb li .sub-item {
+            position: relative;
+            color:#666;
         }
         .gnb {
             padding:0;
@@ -1565,10 +1636,12 @@ footer {
         background: none;
         height:auto;
         & .logo-wrap {
+            height:28px !important;
             span {
                 color:#fff;
             }
             & .logo-img {
+                height:28px !important;
                 .color {
                     opacity: 0;
                 }
