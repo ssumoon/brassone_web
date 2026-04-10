@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/app.js"></script>
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="./js/common.js"></script>
+  <style>
+      html.fullpage-enabled,
+      body.fullpage-enabled {
+          overscroll-behavior: none;
+      }
+
+      body.fullpage-enabled {
+          overflow-x: hidden;
+          overflow-y: hidden;
+      }
+
+      .fullpage-container {
+          scroll-behavior: smooth;
+      }
+
+      .fullpage-container > .fullpage-section {
+          height: 100svh;
+          min-height: 100svh;
+          box-sizing: border-box;
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+          opacity: 0.4;
+          transform: translate3d(0, 40px, 0);
+          transition: opacity .7s ease,
+          transform .7s cubic-bezier(0.22, 1, 0.36, 1);
+          will-change: opacity, transform;
+      }
+
+      .fullpage-container > .fullpage-section.is-active {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+      }
+
+      .fullpage-container > footer.fullpage-section {
+          height: auto;
+          min-height: 160px;
+          opacity: 1;
+          transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+          .fullpage-container {
+              scroll-behavior: auto;
+          }
+
+          .fullpage-container > .fullpage-section {
+              opacity: 1;
+              transform: none;
+              transition: none;
+          }
+      }
+  </style>
+</head>
+
+<body>
+<header id="header">
+  <div class="container">
+    <a href="./index.html" class="logo-wrap">
+      <div class="logo-img">
+        <img class="color" src="./img/logo-color.png"/>
+        <img class="white" src="./img/logo-white.png"/>
+      </div>
+      <span>Lloyd's</span>
+    </a>
+    <div class="gnb-wrapper">
+      <ul class="gnb">
+        <li>
+          <a href="./company/daechang.html" class="main-item">COMPANY</a>
+          <div class="sub-item">
+            <a href="./company/daechang.html">Daechang Co, Ltd.</a>
+            <a href="">EssenTech</a>
+            <a href="">Taewoo</a>
+            <a href="">BooKwang</a>
+            <a href="">BooYoung</a>
+            <a href="">Guilin</a>
+            <a href="">IMI</a>
+            <a href="">LS Metal</a>
+            <a href="">Fuso</a>
+          </div>
+        </li>
+        <li>
+          <a href="./products/brass.html" class="main-item">Products</a>
+          <div class="sub-item">
+            <a href="./products/brass.html">Copper & Brass</a>
+            <a href="">Aluminum</a>
+            <a href="">Stainless Steel</a>
+            <a href="">wire</a>
+          </div>
+        </li>
+        <li>
+          <a href="./contact.html" class="main-item">location</a>
+        </li>
+        <li>
+          <a target="_blank" class="main-item">Catalog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<section class="visual-area">
+  <div class="txt-box">
+    <h1>
+      Lorem ipsum dolor sit amet, <br/>
+      consectetur adipiscing elit.
+    </h1>
+    <p>Proin lacinia odio viverra, aliquam massa vitae, eleifend dolor.</p>
+    <span>
+      Etiam elit sapien, luctus ac elementum sed, pulvinar vitae orci. <br/>
+      Fusce massa lacus, vestibulum quis faucibus hendrerit, hendrerit eget nisi. <br/>
+      Cras fringilla, sapien et vestibulum convallis, dolor arcu tristique mi, at pretium nisi dolor at arcu.
+    </span>
+  </div>
+  <div class="bg-img">
+    <div class="cover"></div>
+    <video src="./img/video-source.mp4" muted autoplay loop></video>
+  </div>
+</section>
+<section class="quick-area center-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>
+        Products
+      </h2>
+      <p>
+        Etiam elit sapien, luctus ac elementum sed, pulvinar vitae orci.<br />
+        Fusce massa lacus, vestibulum quis faucibus hendrerit, hendrerit eget nisi.
+      </p>
+    </div>
+    <ul class="section-list-style">
+      <li>
+        <a class="item">
+          <h4>Copper & Brass</h4>
+          <p>
+            Lorem ipsum dolor sit amet,<br/>
+            consectetur adipiscing elit.
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class="item">
+          <h4>Aluminum</h4>
+          <p>
+            Lorem ipsum dolor sit amet,<br/>
+            consectetur adipiscing elit.
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class="item">
+          <h4>Stainless Steel</h4>
+          <p>
+            Lorem ipsum dolor sit amet,<br/>
+            consectetur adipiscing elit.
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class="item">
+          <h4>Wire</h4>
+          <p>
+            Lorem ipsum dolor sit amet,<br/>
+            consectetur adipiscing elit.
+          </p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="slider-area center-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>
+        COMPANY
+      </h2>
+      <p>
+        Etiam elit sapien, luctus ac elementum sed, pulvinar vitae orci.<br />
+        Fusce massa lacus, vestibulum quis faucibus hendrerit, hendrerit eget nisi.
+      </p>
+    </div>
+  </div>
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img src="./img/slider-img01.jpg"/>
+      </div>
+      <div class="swiper-slide">
+        <img src="./img/slider-img02.jpg"/>
+      </div>
+      <div class="swiper-slide">
+        <img src="./img/slider-img03.jpg"/>
+      </div>
+      <div class="swiper-slide">
+        <img src="./img/slider-img01.jpg"/>
+      </div>
+      <div class="swiper-slide">
+        <img src="./img/slider-img02.jpg"/>
+      </div>
+      <div class="swiper-slide">
+        <img src="./img/slider-img03.jpg"/>
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">
+    <img src="./img/logo-white.png"/>
+  </div>
+  <span>copyright 2025 daechang Lloyds. all right reserved. ALL RIGHTS RESERVED.</span>
+</footer>
+<script>
+  const visualArea = document.querySelector('.visual-area');
+  const visualBgImage = document.querySelector('.visual-area .bg-img img');
+
+  if (visualArea && visualBgImage) {
+    visualArea.addEventListener('mousemove', (e) => {
+      const rect = visualArea.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xRatio = x / rect.width - 0.5;
+      const yRatio = y / rect.height - 0.5;
+      const moveX = xRatio * -50;
+      const moveY = yRatio * -50;
+
+      visualArea.style.setProperty('--visual-parallax-x', `${moveX}px`);
+      visualArea.style.setProperty('--visual-parallax-y', `${moveY}px`);
+    });
+
+    visualArea.addEventListener('mouseleave', () => {
+      visualArea.style.setProperty('--visual-parallax-x', '0px');
+      visualArea.style.setProperty('--visual-parallax-y', '0px');
+    });
+  }
+
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    speed: 700,
+    slidesPerView: 2.5,
+    spaceBetween: 40,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  const sliderSection = document.querySelector('.slider-area');
+  let isSliderWheelLocked = false;
+
+  swiper.on('transitionEnd', () => {
+    isSliderWheelLocked = false;
+  });
+
+  const swiperWrapper = document.querySelector('.slider-area .swiper-wrapper');
+  const imagePopup = document.querySelector('.image-popup');
+  const imagePopupDim = document.querySelector('.image-popup-dim');
+  const imagePopupClose = document.querySelector('.image-popup-close');
+  const imagePopupTarget = document.querySelector('.image-popup-target');
+  const imagePopupView = document.querySelector('.image-popup-view');
+
+  let imagePopupScale = 1;
+
+  const clampImagePopupScale = (value) => Math.min(3, Math.max(1, Number(value.toFixed(2))));
+
+  const updateImagePopupScale = () => {
+    if (!imagePopupTarget) return;
+    imagePopupTarget.style.transform = `scale(${imagePopupScale})`;
+
+  };
+
+  const openImagePopup = (src, alt) => {
+    if (!imagePopup || !imagePopupTarget) return;
+    imagePopupScale = 1;
+    imagePopupTarget.src = src;
+    imagePopupTarget.alt = alt || '확대 이미지';
+    imagePopup.classList.add('active');
+    imagePopup.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('popup-open');
+
+    if (imagePopupView) {
+      imagePopupView.scrollTop = 0;
+      imagePopupView.scrollLeft = 0;
+    }
+
+    updateImagePopupScale();
+  };
+
+  const closeImagePopup = () => {
+    if (!imagePopup || !imagePopupTarget) return;
+    imagePopup.classList.remove('active');
+    imagePopup.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('popup-open');
+    imagePopupTarget.src = '';
+    imagePopupTarget.alt = '확대 이미지';
+    imagePopupScale = 1;
+    updateImagePopupScale();
+  };
+
+  const changeImagePopupScale = (delta) => {
+    imagePopupScale = clampImagePopupScale(imagePopupScale + delta);
+    updateImagePopupScale();
+  };
+
+  if (swiperWrapper && imagePopup && imagePopupTarget) {
+    swiperWrapper.addEventListener('click', (e) => {
+      const clickedImage = e.target.closest('.swiper-slide img');
+      if (!clickedImage) return;
+      openImagePopup(clickedImage.currentSrc || clickedImage.src, clickedImage.alt);
+    });
+
+    if (imagePopupDim) {
+      imagePopupDim.addEventListener('click', closeImagePopup);
+    }
+
+    if (imagePopupClose) {
+      imagePopupClose.addEventListener('click', closeImagePopup);
+    }
+
+    if (imagePopupView) {
+      imagePopupView.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        changeImagePopupScale(e.deltaY < 0 ? 0.15 : -0.15);
+      }, {passive: false});
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!imagePopup.classList.contains('active')) return;
+      if (e.key === 'Escape') closeImagePopup();
+      if (e.key === '+' || e.key === '=') changeImagePopupScale(0.25);
+      if (e.key === '-') changeImagePopupScale(-0.25);
+      if (e.key === '0') {
+        imagePopupScale = 1;
+        updateImagePopupScale();
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const pageContainer = document.querySelector('main') || document.body;
+    const sections = Array.from(pageContainer.querySelectorAll(':scope > section, :scope > footer'));
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!sections.length) return;
+
+    pageContainer.classList.add('fullpage-container');
+    document.documentElement.classList.add('fullpage-enabled');
+    document.body.classList.add('fullpage-enabled');
+
+    sections.forEach((section, index) => {
+      section.classList.add('fullpage-section');
+      section.setAttribute('data-fullpage-index', String(index));
+    });
+
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    const updateActiveSection = (index) => {
+      sections.forEach((section, sectionIndex) => {
+        section.classList.toggle('is-active', sectionIndex === index);
+      });
+    };
+
+    const getMaxScrollTop = () => {
+      return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    };
+
+    const getSectionTargetTop = (section) => {
+      if (!section) return 0;
+      if (section.tagName.toLowerCase() === 'footer') {
+        return getMaxScrollTop();
+      }
+      return section.offsetTop;
+    };
+
+    const getClosestSectionIndex = () => {
+      const currentScrollTop = window.scrollY || window.pageYOffset || 0;
+      let closestIndex = 0;
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      sections.forEach((section, index) => {
+        const distance = Math.abs(currentScrollTop - getSectionTargetTop(section));
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      return closestIndex;
+    };
+
+    const moveToSection = (nextIndex) => {
+      const clampedIndex = Math.max(0, Math.min(nextIndex, sections.length - 1));
+      const targetSection = sections[clampedIndex];
+      if (!targetSection || (clampedIndex === currentIndex && isAnimating)) return;
+
+      currentIndex = clampedIndex;
+      isAnimating = true;
+      updateActiveSection(currentIndex);
+
+      window.scrollTo({
+        top: getSectionTargetTop(targetSection),
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
+
+      window.setTimeout(() => {
+        isAnimating = false;
+      }, prefersReducedMotion ? 0 : 900);
+    };
+
+    updateActiveSection(currentIndex);
+
+    window.addEventListener('wheel', (event) => {
+      if (isAnimating) {
+        event.preventDefault();
+        return;
+      }
+
+      if (Math.abs(event.deltaY) < 10) return;
+
+      const closestIndex = getClosestSectionIndex();
+      const activeSection = sections[closestIndex];
+      const isOnSliderSection = !!sliderSection && activeSection === sliderSection;
+
+      if (isOnSliderSection) {
+        if (swiper.animating || isSliderWheelLocked) {
+          event.preventDefault();
+          return;
+        }
+
+        if (event.deltaY > 0 && !swiper.isEnd) {
+          isSliderWheelLocked = true;
+          swiper.slideNext();
+          event.preventDefault();
+          return;
+        }
+
+        if (event.deltaY < 0 && !swiper.isBeginning) {
+          isSliderWheelLocked = true;
+          swiper.slidePrev();
+          event.preventDefault();
+          return;
+        }
+      }
+
+      const direction = event.deltaY > 0 ? 1 : -1;
+      moveToSection(closestIndex + direction);
+      event.preventDefault();
+    }, {passive: false});
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown' || event.key === 'PageDown' || event.key === ' ') {
+        event.preventDefault();
+        moveToSection(getClosestSectionIndex() + 1);
+      }
+
+      if (event.key === 'ArrowUp' || event.key === 'PageUp') {
+        event.preventDefault();
+        moveToSection(getClosestSectionIndex() - 1);
+      }
+
+      if (event.key === 'Home') {
+        event.preventDefault();
+        moveToSection(0);
+      }
+
+      if (event.key === 'End') {
+        event.preventDefault();
+        moveToSection(sections.length - 1);
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      if (isAnimating) return;
+      currentIndex = getClosestSectionIndex();
+      updateActiveSection(currentIndex);
+    }, {passive: true});
+  });
+
+  const menuButtons = document.querySelectorAll('.mobile-menu-btn')
+  for (const menuButton of menuButtons) {
+    menuButton.addEventListener('click', function () {
+      document.querySelector('.gnb-wrapper').classList.add('active');
+    });
+  }
+  //닫기 버튼을 눌렀을 때 모달팝업이 닫힘
+  document.querySelector('.gnb-wrapper .mobile-menu-close-btn').addEventListener('click', function () {
+    //'active' class 제거
+    document.querySelector('.gnb-wrapper').classList.remove('active');
+  })
+</script>
+</body>
+</html>
