@@ -825,13 +825,30 @@ section {
         flex-direction: column;
         border-radius: 40px;
         height:320px;
+        overflow: hidden;
+        position: relative;
         h4 {
             margin:0 0 10px;
             font-size:18px;
+            position: relative;
+            z-index: 2;
         }
         p {
             font-size:16px;
             margin:0;
+            position: relative;
+            z-index: 2;
+        }
+        img {
+            position: absolute;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            object-fit: cover;
+            z-index: 1;
         }
     }
 }
