@@ -540,6 +540,11 @@ header.sub {
     background: #fafafa;
     transition-duration: .3s;
     border-bottom:1px rgba(0,0,0,0.1) solid;
+    .mobile-menu-btn {
+        span {
+            background:#111;
+        }
+    }
     .logo-wrap {
         .color {
             opacity: 1;
@@ -1517,7 +1522,7 @@ footer {
     span {
         width:18px;
         height:2px;
-        background: #111;
+        background: #fff;
         display: block;
     }
 }
@@ -1566,6 +1571,9 @@ footer {
         .mobile-menu-btn {
             display: flex;
             cursor: pointer;
+        }
+        .mobile-menu-close-btn-wrapper {
+            display: flex;
         }
         .gnb-wrapper.active {
             transform: translateX(0);
@@ -1654,7 +1662,7 @@ footer {
         }
     }
     header.sub, header.sub:hover {
-        height:80px;
+        height:70px;
         & .logo-wrap {
             span {
                 color:#666;
